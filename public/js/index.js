@@ -1,5 +1,7 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
+var $exampleText2 = $("#example-text2");
+
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -38,12 +40,17 @@ var refreshExamples = function() {
         .text(example.text)
         .attr("href", "/example/" + example.id);
 
+      var $a2 = $("<a>")
+        .text(example.text2)
+        .attr("href", "/example/" + example.id);
+
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
           "data-id": example.id
         })
-        .append($a);
+        .append($a)
+        .append($a2)
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
@@ -66,6 +73,7 @@ var handleFormSubmit = function(event) {
 
   var example = {
     text: $exampleText.val().trim(),
+    text2: $exampleText2.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
@@ -79,6 +87,7 @@ var handleFormSubmit = function(event) {
   });
 
   $exampleText.val("");
+  $exampleText2.val("");
   $exampleDescription.val("");
 };
 
