@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Luna2019*",
+    "password": "",
     "database": "closetdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Luna2019*",
+    "password": "",
     "database": "closetdb",
     "host": "localhost",
     "dialect": "mysql",
