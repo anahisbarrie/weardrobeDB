@@ -8,7 +8,7 @@
   left: -86px;
 }
 
-/* media queries */
+/* Media Queries */
 @media only screen and (max-width: 900px){
   .dropdown-menu {
     top: 115%;
