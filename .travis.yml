@@ -9,5 +9,5 @@ branches:
 services:
   - mysql
 before_install:
-  - mysql -u root --password="" 'CREATE DATABASE closetdb;'
+  - mysql -u root -e 'CREATE DATABASE closetdb;'
 
