@@ -1,3 +1,17 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+/* Modal */
+.dropdown-menu {
+  top: 115%;
+  left: -86px;
+}
+
+/* media queries */
+@media only screen and (max-width: 900px){
+  .dropdown-menu {
+    top: 115%;
+    left: 0;
+  }
+}
