@@ -1,8 +1,11 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleText2 = $("#example-text2");
-
-var $exampleDescription = $("#example-description");
+var $exampleBrand = $("#item-brand");
+var $exampleType = $("#item-type");
+var $exampleColor = $("#item-color");
+var $exampleStyle = $("#item-style");
+var $examplePrice = $("#item-price");
+var $exampleLastWore = $("#last-wore");
+var $exampleDescription = $("#item-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -37,12 +40,24 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
+        .text(example.brand)
+        .attr("href", "/example/" + example.id);
+      var $a2 = $("<a>")
+        .text(example.type)
+        .attr("href", "/example/" + example.id);
+      var $a3 = $("<a>")
+        .text(example.color)
+        .attr("href", "/example/" + example.id);
+      var $a4 = $("<a>")
+        .text(example.style)
+        .attr("href", "/example/" + example.id);
+      var $a5 = $("<a>")
+        .text(example.price)
+        .attr("href", "/example/" + example.id);
+      var $a6= $("<a>")
+        .text(example.lastwore)
         .attr("href", "/example/" + example.id);
 
-      var $a2 = $("<a>")
-        .text(example.text2)
-        .attr("href", "/example/" + example.id);
 
       var $li = $("<li>")
         .attr({
@@ -51,6 +66,11 @@ var refreshExamples = function() {
         })
         .append($a)
         .append($a2)
+        .append($a3)
+        .append($a4)
+        .append($a5)
+        .append($a6)
+      
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
@@ -70,14 +90,20 @@ var refreshExamples = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
+  let val = $exampleBrand.val()
+  console.log("TCL: handleFormSubmit -> val", val)
 
   var example = {
-    text: $exampleText.val().trim(),
-    text2: $exampleText2.val().trim(),
+    brand: $exampleBrand.val().trim(),
+    type: $exampleType.val().trim(),
+    color: $exampleColor.val().trim(),
+    style: $exampleStyle.val().trim(),
+    price: $examplePrice.val().trim(),
+    lastwore: $exampleLastWore.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(example.brand && example.description)) {
     alert("You must enter an example text and description!");
     return;
   }
@@ -86,8 +112,12 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleText2.val("");
+  $exampleBrand.val("");
+  $exampleType.val("");
+  $exampleColor.val("");
+  $exampleStyle.val("");
+  $examplePrice.val("");
+  $exampleLastWore.val("");
   $exampleDescription.val("");
 };
 
