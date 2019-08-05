@@ -1,3 +1,5 @@
+
+
 // Get references to page elements
 var $exampleBrand = $("#item-brand");
 var $exampleType = $("#item-type");
@@ -6,6 +8,7 @@ var $exampleStyle = $("#item-style");
 var $examplePrice = $("#item-price");
 var $exampleLastWore = $("#last-wore");
 var $exampleDescription = $("#item-description");
+var $exampleForm = $("#inputform");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -57,7 +60,8 @@ var refreshExamples = function() {
       var $a6= $("<a>")
         .text(example.lastwore)
         .attr("href", "/example/" + example.id);
-
+      // var $a7= $("<img>")
+      // .attr("src", example.imagelink)
 
       var $li = $("<li>")
         .attr({
@@ -134,5 +138,39 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+// $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$("#inputform").submit(function(e){
+e.preventDefault();
+  var inputInfo = {
+    brand: $exampleBrand.val().trim(),
+    type: $exampleType.val().trim(),
+    color: $exampleColor.val().trim(),
+    style: $exampleStyle.val().trim(),
+    price: $examplePrice.val().trim(),
+    lastwore: $exampleLastWore.val().trim(),
+    description: $exampleDescription.val().trim()
+  };
+
+  if (!(inputInfo.brand && inputInfo.description)) {
+    alert("You must enter an example text and description!");
+    return;
+  }
+$(this).ajaxSubmit({
+data: inputInfo,
+contentType: "application/json",
+success: function(results){ 
+  
+  refreshExamples();
+}
+});
+  $exampleBrand.val("");
+  $exampleType.val("");
+  $exampleColor.val("");
+  $exampleStyle.val("");
+  $examplePrice.val("");
+  $exampleLastWore.val("");
+  $exampleDescription.val("");
+return false;
+ 
+})
