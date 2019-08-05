@@ -31,6 +31,12 @@ $.ajax({
         categoryImg.attr("src",imagePixabay);
         //prepending the image to the images div
         $("#images").prepend(categoryImg);
+        // $("#images2").prepend(categoryImg);
+        // $("#images").prepend(categoryImg);
+        // $("#images").prepend(categoryImg);
+        // $("#images").prepend(categoryImg);
+        // $("#images").prepend(categoryImg);
+
     }
 })};
 
