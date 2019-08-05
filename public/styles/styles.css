@@ -15,3 +15,53 @@
     left: 0;
   }
 }
+
+
+/* FRONT END BASIC CSS */
+
+body{
+    background: url("http://www.retouchingagency.com/wp-content/uploads/2018/01/1049-c.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.weardrobebtn{
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 1.3rem;
+    /* background: url; */
+    position: absolute;
+    left: 30px;
+    right: 200px;
+    border-radius: 50%;
+}
+
+.calendar{
+    width: 200px;
+    height: 200px;
+    line-height: 300px;
+    font-size: 1.3rem;
+    /* background: url; */
+    position: absolute;
+    left: 1200px;
+    right: 200px;
+    top:100px;
+    border-radius: 50%;
+}
+
+.inspiration{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 1.3rem;
+    /* background: url; */
+    position: absolute;
+    left: 1000px;
+    right: 100px;
+    top: 500px;
+    border-radius: 50%;
+}
+
+
