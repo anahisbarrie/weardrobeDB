@@ -1,0 +1,20 @@
+body{
+    background: url("http://www.retouchingagency.com/wp-content/uploads/2018/01/1049-c.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.weardrobebtn{
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 1.3rem;
+    /* background: url; */
+    position: absolute;
+    left: 30px;
+    right: 200px;
+    border-radius: 50%;
+}
+
+
