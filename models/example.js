@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     style: DataTypes.STRING,
     price: DataTypes.STRING,
     lastwore: DataTypes.STRING,
+    imagelink: DataTypes.STRING,
     description: DataTypes.TEXT
   });
   return Example;
