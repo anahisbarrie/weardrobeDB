@@ -20,17 +20,16 @@
 /* FRONT END BASIC CSS */
 
 body{
-    background: url("http://www.retouchingagency.com/wp-content/uploads/2018/01/1049-c.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+   
     
 }
 
-/* .jumbotron{
-  background: url("https://www.slrlounge.com/wp-content/uploads/2015/01/Lindsay-Adler-Photography-Queen-of-the-Desert-Editorial-Noise-Magazine-2014-Desert-Holly-19-copy-2.jpg");
-  height: 700px;
-} */
+.jumbotron{
+  background: url("https://i.ibb.co/QnTKwMh/landinpage.png");
+  background-repeat: no-repeat;
+    background-size: cover; 
+  height: 900px;
+}
 
 .weardrobebtn{
     width: 300px;
@@ -39,8 +38,9 @@ body{
     font-size: 1.3rem;
     /* background: url; */
     position: absolute;
-    left: 30px;
-    right: 200px;
+    /* left: 120px; */
+    right: 930px;
+    top: 5px;
     border-radius: 50%;
 }
 
@@ -51,9 +51,9 @@ body{
     font-size: 1.3rem;
     /* background: url; */
     position: absolute;
-    left: 1200px;
+    left: 1000px;
     right: 200px;
-    top:100px;
+    top: 50px;
     border-radius: 50%;
 }
 
@@ -64,8 +64,8 @@ body{
     font-size: 1.3rem;
     /* background: url; */
     position: absolute;
-    left: 1000px;
-    right: 100px;
+    left: 900px;
+    right: 300px;
     top: 500px;
     border-radius: 50%;
 }
