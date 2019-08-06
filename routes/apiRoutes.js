@@ -25,7 +25,7 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new example
+
   app.post("/api/examples", upload.single("userpicture"), function(req, res) {
     console.log("data from frontend: ", req.body);
     console.log("file", req.file);var PORT = process.env.PORT || 3000;
@@ -34,6 +34,7 @@ module.exports = function(app) {
     var uploadedInfo = { ...req.body, imagelink: updatedfilename}
     console.log("updated information with link ", uploadedInfo)
     db.Example.create(uploadedInfo).then(function(dbExample) {
+
       res.json(dbExample);
     });
   });
