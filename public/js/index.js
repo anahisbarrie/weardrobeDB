@@ -41,25 +41,26 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
+  console.log("TCL: refreshExamples -> data", data)
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.brand)
         .attr("href", "/example/" + example.id);
-      var $a2 = $("<a>")
-        .text(example.type)
-        .attr("href", "/example/" + example.id);
-      var $a3 = $("<a>")
-        .text(example.color)
-        .attr("href", "/example/" + example.id);
+      // var $a2 = $("<a>")
+      //   .text(example.type)
+      //   .attr("href", "/example/" + example.id);
+      // var $a3 = $("<a>")
+      //   .text(example.color)
+      //   .attr("href", "/example/" + example.id);
       var $a4 = $("<a>")
         .text(example.style)
         .attr("href", "/example/" + example.id);
-      var $a5 = $("<a>")
-        .text(example.price)
-        .attr("href", "/example/" + example.id);
-      var $a6= $("<a>")
-        .text(example.lastwore)
-        .attr("href", "/example/" + example.id);
+      // var $a5 = $("<a>")
+      //   .text(example.price)
+      //   .attr("href", "/example/" + example.id);
+      // var $a6= $("<a>")
+      //   .text(example.lastwore)
+      //   .attr("href", "/example/" + example.id);
       // var $a7= $("<img>")
       // .attr("src", example.imagelink)
 
@@ -69,11 +70,11 @@ var refreshExamples = function() {
           "data-id": example.id
         })
         .append($a)
-        .append($a2)
-        .append($a3)
+        // .append($a2)
+        // .append($a3)
         .append($a4)
-        .append($a5)
-        .append($a6)
+        // .append($a5)
+        // .append($a6)
       
 
       var $button = $("<button>")
