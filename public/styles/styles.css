@@ -33,15 +33,16 @@ body{
 
 .weardrobebtn{
     width: 300px;
+    background: url("https://i.ibb.co/bbvKfpW/weardrobedb.png");
     height: 300px;
     line-height: 300px;
     font-size: 1.3rem;
-    /* background: url; */
     position: absolute;
     /* left: 120px; */
     right: 930px;
     top: 5px;
     border-radius: 50%;
+    border:none;
 }
 
 .calendar{
@@ -55,6 +56,7 @@ body{
     right: 200px;
     top: 50px;
     border-radius: 50%;
+    border:none;
 }
 
 .inspiration{
@@ -68,6 +70,7 @@ body{
     right: 300px;
     top: 500px;
     border-radius: 50%;
+    border:none;
 }
 
 .gallery {
