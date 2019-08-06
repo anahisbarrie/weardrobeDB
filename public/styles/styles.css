@@ -24,7 +24,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     
+    
 }
+
+/* .jumbotron{
+  background: url("https://www.slrlounge.com/wp-content/uploads/2015/01/Lindsay-Adler-Photography-Queen-of-the-Desert-Editorial-Noise-Magazine-2014-Desert-Holly-19-copy-2.jpg");
+  height: 700px;
+} */
 
 .weardrobebtn{
     width: 300px;
@@ -64,4 +70,35 @@ body{
     border-radius: 50%;
 }
 
+.gallery {
+-webkit-column-count: 3;
+-moz-column-count: 3;
+column-count: 3;
+-webkit-column-width: 33%;
+-moz-column-width: 33%;
+column-width: 33%; }
+.gallery .pics {
+-webkit-transition: all 350ms ease;
+transition: all 350ms ease; }
+.gallery .animation {
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+transform: scale(1); }
 
+@media (max-width: 450px) {
+.gallery {
+-webkit-column-count: 1;
+-moz-column-count: 1;
+column-count: 1;
+-webkit-column-width: 100%;
+-moz-column-width: 100%;
+column-width: 100%;
+}
+}
+
+@media (max-width: 400px) {
+.btn.filter {
+padding-left: 1.1rem;
+padding-right: 1.1rem;
+}
+}

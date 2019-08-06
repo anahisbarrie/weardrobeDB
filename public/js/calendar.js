@@ -1,7 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+var API = {
+    getExamples: function () {
+        return $.ajax({
+            url: "api/examples",
+            type: "GET"
+        });
+    }
+};
+$('document').ready(function () { 
+    var items = [];
+    API.getExamples().then(function(response){  
+        for (var i = 0; i < response.length; i++){
+            items.push({title: response[i].type, start: response[i].lastwore})  
+            }
+    var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
         plugins: ['interaction', 'dayGrid', 'timeGrid'],
         defaultView: 'dayGridMonth',
         defaultDate: '2019-08-07',
@@ -10,55 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        events: [
-            {
-                title: '',
-                start: ''
-            },
-            {
-                title: '',
-                start: '',
-                end: ''
-            },
-            {
-                groupId: '',
-                title: '',
-                start: ''
-            },
-            {
-                groupId: '',
-                title: '',
-                start: ''
-            },
-            {
-                title: '',
-                start: '',
-                end: ''
-            },
-            {
-                title: '',
-                start: '',
-                end: ''
-            },
-            {
-                title: '',
-                start: ''
-            },
-            {
-                title: '',
-                start: ''
-            },
-            {
-                title: '',
-                start: ''
-            },
-            {
-                title: '',
-                url: '',
-                start: ''
-            }
-        ]
+        events:
     });
 
     calendar.render();
 });
+})
