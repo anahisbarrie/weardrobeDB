@@ -1,3 +1,5 @@
+USE closetdb;
+
 INSERT INTO clothes (brand_name, item_type, item_color, item_style, price, last_worn, times_worn)
 VALUES
     ("Calvin Klein", "Bottom", "Black", "Casual", 120.22, "2019/06/20", 3),
