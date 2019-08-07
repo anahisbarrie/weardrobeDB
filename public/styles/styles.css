@@ -19,18 +19,14 @@
 
 /* FRONT END BASIC CSS */
 
-body{
-   
-    
-}
 /* Jumbotron */
-
 .jumbotron{
   background: url("https://i.ibb.co/QnTKwMh/landinpage.png");
   background-repeat: no-repeat;
     background-size: cover; 
   height: 900px;
 }
+
 
 /* Animation of Weardrobe button */
 .swing{
@@ -114,6 +110,14 @@ body{
 .card-deck{
   padding: 40px;
 }
+
+.card{
+  background: #F2E7CF;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+
+
 
 .gallery {
 -webkit-column-count: 3;
