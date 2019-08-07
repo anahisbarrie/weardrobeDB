@@ -100,11 +100,11 @@ $('document').ready(function() {
       var type = new Chart(chartThree, {
         type: 'pie',
         data: {
-          labels: [],
+          labels: ["a", "b", "c"],
           datasets: [{
             label: 'Breakdown Of Style Type',
             //Need to put in the data below using forloop
-            data: [],
+            data: [44, 22, 4],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
