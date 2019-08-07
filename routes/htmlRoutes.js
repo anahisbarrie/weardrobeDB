@@ -20,6 +20,11 @@ module.exports = function(app) {
     });
   });
 
+  //Load statistics page with all the charts and current information for the user
+  app.get("/statistics", function(req, res) {
+    res.render("stats")
+  })
+
   app.get("/calendar", function(req, res) {
     res.render("calendar")
   })
