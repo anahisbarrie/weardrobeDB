@@ -109,6 +109,8 @@
 
 .card-deck{
   padding: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .card{
@@ -119,6 +121,7 @@
 .card-title{
   font-size: 50pt;
   font-family: 'Passion One', cursive;
+  text-align: center;
 
 }
 
@@ -128,6 +131,11 @@
   text-align: center;
 }
 
+/* Banner Inspo */
+
+.inspoBanner{
+  margin: 70px 0 100px 0;
+}
 
 .gallery {
 -webkit-column-count: 3;
