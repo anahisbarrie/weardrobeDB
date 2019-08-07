@@ -27,4 +27,12 @@ module.exports = function(app) {
       console.log(dbAccessories);
     });
   });
+
+  app.get("/api/allClothes", function(req, res) {
+    // console.log(req.body);
+    db.Clothes.findAll({ }).then(function(dbTop) {
+      res.json(dbTop);
+      console.log(dbTop);
+    });
+  });
 };
