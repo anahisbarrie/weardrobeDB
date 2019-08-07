@@ -23,6 +23,7 @@ body{
    
     
 }
+/* Jumbotron */
 
 .jumbotron{
   background: url("https://i.ibb.co/QnTKwMh/landinpage.png");
@@ -31,23 +32,12 @@ body{
   height: 900px;
 }
 
+/* Animation of Weardrobe button */
 .swing{
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -20px;
   float: left;
   animation-play-state: paused;
-}
-
-.swing:after{
-    content: '';
-    position: absolute;  
-    width: 20px; height: 20px;  
-    border: 1px solid #999;
-    top: -10px; left: 50%;
-    z-index: 0;
-    border-bottom: none;
-    border-right: none;
-    transform: rotate(45deg);
 }
 
 @keyframes swing {
@@ -56,10 +46,14 @@ body{
 }
 
 .hanger2:hover {
-  /* Toggle our animation play state to running when we are hovering over our sticker */
   animation-play-state: running;
 }
 
+/* .weardrobebtn:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+} */
+
+/* Buttons homepage */
 .hanger {
   width: 300px;
   height: 300px;
@@ -113,6 +107,12 @@ body{
     top: 500px;
     border-radius: 50%;
     border:none;
+}
+
+/* Community Gallery */
+
+.card-deck{
+  padding: 40px;
 }
 
 .gallery {
