@@ -32,6 +32,10 @@ body{
   height: 900px;
 }
 
+.jumbotron2{
+  margin-top: 40px;
+}
+
 /* Animation of Weardrobe button */
 .swing{
   animation: swing ease-in-out 1s infinite alternate;
@@ -113,6 +117,23 @@ body{
 
 .card-deck{
   padding: 40px;
+
+}
+
+.card{
+  background: #F2E7CF;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.card-title{
+  font-size: 50pt;
+  font-family: 'Passion One', cursive;
+  
+
+}
+
+.card-text{
+  font-family: 'Nunito', sans-serif;
+  font-size: 15pt;
 }
 
 .gallery {
