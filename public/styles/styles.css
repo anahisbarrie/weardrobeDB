@@ -45,9 +45,10 @@
   animation-play-state: running;
 }
 
-/* .weardrobebtn:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-} */
+.calendarIcon2:hover {
+  animation-play-state: running;
+
+}
 
 /* Buttons homepage */
 .hanger {
@@ -77,6 +78,19 @@
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
+.calendarIcon{
+  width: 200px;
+  height: 200px;
+  line-height: 300px;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 1200px;
+  top: 90px;
+  border-radius: 50%;
+  border:none;
+}
+
+
 .calendar{
     width: 200px;
     height: 200px;
@@ -89,6 +103,8 @@
     top: 50px;
     border-radius: 50%;
     border:none;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 .inspiration{
