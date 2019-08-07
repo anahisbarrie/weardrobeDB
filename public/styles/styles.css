@@ -19,10 +19,6 @@
 
 /* FRONT END BASIC CSS */
 
-body{
-   
-    
-}
 /* Jumbotron */
 
 .jumbotron{
@@ -37,7 +33,7 @@ body{
 }
 
 /* Animation of Weardrobe button */
-.swing, .calendarIcon{
+.swing , .calendarIcon{
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -20px;
   float: left;
@@ -129,7 +125,8 @@ body{
     right: 300px;
     top: 500px;
     border-radius: 50%;
-    border:none;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 /* Community Gallery */
@@ -147,7 +144,6 @@ body{
   font-size: 50pt;
   font-family: 'Passion One', cursive;
   
-
 }
 
 .card-text{
