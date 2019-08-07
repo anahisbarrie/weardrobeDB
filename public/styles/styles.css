@@ -37,7 +37,7 @@ body{
 }
 
 /* Animation of Weardrobe button */
-.swing{
+.swing, .calendarIcon{
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -20px;
   float: left;
@@ -50,6 +50,10 @@ body{
 }
 
 .hanger2:hover {
+  animation-play-state: running;
+}
+
+.calendarIcon:hover{
   animation-play-state: running;
 }
 
@@ -66,6 +70,19 @@ body{
   position: absolute;
   right: 1100px;
   top: 94px;
+  border-radius: 50%;
+  border:none;
+
+}
+
+.calendarIcon {
+  width: 100px;
+  height: 100px;
+  line-height: 300px;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 1200px;
+  top: 80px;
   border-radius: 50%;
   border:none;
 
@@ -97,6 +114,8 @@ body{
     top: 50px;
     border-radius: 50%;
     border:none;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 .inspiration{
