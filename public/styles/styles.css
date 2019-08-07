@@ -119,6 +119,24 @@
     top: 500px;
     border-radius: 50%;
     border:none;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.random{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 1.3rem;
+  /* background: url; */
+  position: absolute;
+  left: 900px;
+  right: 300px;
+  top: 500px;
+  border-radius: 50%;
+  border:none;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 /* Community Gallery */
