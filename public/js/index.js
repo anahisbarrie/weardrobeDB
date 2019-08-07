@@ -55,14 +55,14 @@ var refreshExamples = function() {
       var $a4 = $("<a>")
         .text(example.style)
         .attr("href", "/example/" + example.id);
-      // var $a5 = $("<a>")
-      //   .text(example.price)
-      //   .attr("href", "/example/" + example.id);
-      // var $a6= $("<a>")
-      //   .text(example.lastwore)
-      //   .attr("href", "/example/" + example.id);
-      // var $a7= $("<img>")
-      // .attr("src", example.imagelink)
+      var $a5 = $("<a>")
+        .text(example.price)
+        .attr("href", "/example/" + example.id);
+      var $a6= $("<a>")
+        .text(example.lastwore)
+        .attr("href", "/example/" + example.id);
+      var $a7= $("<img>")
+      .attr("src", example.imagelink)
 
       var $li = $("<li>")
         .attr({
