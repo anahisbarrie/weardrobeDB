@@ -38,7 +38,8 @@ describe("GET /api/examples", function () {
         price: "98",
         lastwore: "21/21/2019",
         imagelink: "kshjf.png",
-        description: "texting dummy data"
+        description: "texting dummy data",
+        times_worn: 55
       }
 
     ]).then(function () {
@@ -67,7 +68,8 @@ describe("GET /api/examples", function () {
             price: "98",
             lastwore: "21/21/2019",
             imagelink: "kshjf.png",
-            description: "texting dummy data"
+            description: "texting dummy data",
+            times_worn: 55
           });
 
         // The `done` function is used to end any asynchronous tests
