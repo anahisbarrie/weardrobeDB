@@ -10,7 +10,7 @@ var OutfitData = {
       data: JSON.stringify(saveOutfit)
     });
   },
-  getOutfit: function() {
+  getOutfits: function() {
     return $.ajax({
       url: "api/allClothes",
       type: "GET"
@@ -25,19 +25,18 @@ var OutfitData = {
 };
 
 // Function to get a random outfit
-OutfitData.getOutfit().then(function(data) {
+OutfitData.getOutfits().then(function(data) {
+  $("#outfit").append()
   console.log("Data!" + JSON.stringify(data));
   var bottom = filter(data, "Bottom");
   var top = filter(data, "Top");
   var accessory = filter(data,"Accessories");
-  // console.info("tops:" + JSON.stringify(tops));
-  // console.info("bottoms:" + JSON.stringify(bottom));
-  // console.info("accessories:" + JSON.stringify(accessories));
   console.info("Random bottom: " + JSON.stringify(getRandom(bottom)));
   console.info("Random top: " + JSON.stringify(getRandom(top)));
   console.info("Random accessory: " + JSON.stringify(getRandom(accessory)));
   console.info("Random bottom: " + JSON.stringify(getRandom(bottom)));
 });
+
 
 // Function to filter for item type
 var filter = function(data, filter) {
@@ -61,7 +60,10 @@ var getRandom = function(data) {
 // $("#generateOutfitBtn").on("click", function() );
 // // On-click to generate the next outfit (same as above)
 // $("#nextOutfitBtn").on("click", function() );
+
 // // On-click to save the daly outfit
-// $("#saveOutfitBtn").on("click", function() );
+$("#saveOutfitBtn").on("click", function() {
+  OutfitData.saveOutfit(selectedOutfit)
+});
 
 // for saveOutfit - pass each object into saveOutfit

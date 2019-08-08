@@ -35,4 +35,12 @@ module.exports = function(app) {
       console.log(dbAllClothes);
     });
   });
+
+  app.get("/allClothes", function(req, res) {
+    // console.log(req.body);
+    db.Example.findAll({ }).then(function(dbAllClothes) {
+      res.send("outfit",
+      {clothes: dbAllClothes});
+    });
+  });
 };
