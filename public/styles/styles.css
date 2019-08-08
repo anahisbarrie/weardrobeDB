@@ -61,6 +61,10 @@
   top: 94px;
   border-radius: 50%;
   border:none;
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float: left;
+  /* animation-play-state: paused; */
 
 }
 .weardrobebtn{
