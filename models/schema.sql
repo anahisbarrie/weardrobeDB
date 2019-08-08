@@ -3,14 +3,14 @@ CREATE DATABASE closetdb;
 
 USE closetdb;
 
-CREATE TABLE example (
+CREATE TABLE Example (
     id INT NOT NULL AUTO_INCREMENT,
     brand VARCHAR(255) NOT NULL,
     type VARCHAR(255) NOT NULL,
     color VARCHAR(255) NOT NULL,
     style VARCHAR(255) NOT NULL, 
     price DECIMAL(10,2) NOT NULL,
-    last_wore DATE NULL,
+    lastwore DATE NULL,
     imagelink VARCHAR(1024) NULL,
     description VARCHAR(2000) NULL,
     times_worn INT NOT NULL,

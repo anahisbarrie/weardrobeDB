@@ -8,7 +8,11 @@ module.exports = function(sequelize, DataTypes) {
     lastwore: DataTypes.STRING,
     imagelink: DataTypes.STRING,
     description: DataTypes.TEXT,
-    times_worn: DataTypes.INTEGER
-  });
+    times_worn: DataTypes.INTEGER,
+  },{
+    createdAt: false,
+    updatedAt: false,
+    freezeTableName: true,
+    });
   return Example;
 };

@@ -26,7 +26,8 @@ var OutfitData = {
 
 // Function to get a random outfit
 OutfitData.getOutfits().then(function(data) {
-  $("#outfit").append()
+  // $("#outfit").append()
+
   console.log("Data!" + JSON.stringify(data));
   var bottom = filter(data, "Bottom");
   var top = filter(data, "Top");
