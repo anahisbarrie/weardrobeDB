@@ -3,14 +3,16 @@ module.exports = function(sequelize, DataTypes) {
   var Clothes = sequelize.define(
     "Clothes",
     {
-      brand_name: DataTypes.STRING,
+      brand: DataTypes.STRING,
       item_type: DataTypes.STRING,
-      item_color: DataTypes.STRING,
-      item_style: DataTypes.STRING,
-      price: DataTypes.FLOAT,
-      last_worn: DataTypes.DATE,
+      color: DataTypes.STRING,
+      seasonality: DataTypes.STRING,
+      style: DataTypes.STRING,
+      price: DataTypes.STRING,
+      last_worn: DataTypes.STRING,
       times_worn: DataTypes.INTEGER,
-      clothing_image: DataTypes.STRING
+      image_link: DataTypes.STRING,
+      item_description: DataTypes.TEXT
     },
     {
       timestamps: false
