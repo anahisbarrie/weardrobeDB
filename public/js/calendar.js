@@ -11,6 +11,7 @@ $('document').ready(function () {
     API.getExamples().then(function (response) {
         for (var i = 0; i < response.length; i++) {
             items.push({ title: response[i].type, start: response[i].lastwore })
+            
         }
         var calendarEl = document.getElementById("calendar");
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -20,8 +21,10 @@ $('document').ready(function () {
                 // alert('View: ' + info.view.type);
 
                 // change the border color just for fun
-                info.el.style.borderColor = 'red';
-                $('#exampleModal').modal()
+                // info.el.style.borderColor = 'red';
+                $('#exampleModal').modal();
+                
+                // $("#modalBody").prepend(items);
 
             },
             plugins: ['interaction', 'dayGrid', 'timeGrid'],
@@ -35,8 +38,11 @@ $('document').ready(function () {
             },
             events: items
 
-        });
+            
 
+        });
+        
         calendar.render();
+        
     });
 })

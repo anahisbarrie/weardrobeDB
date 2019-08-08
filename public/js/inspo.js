@@ -7,8 +7,6 @@ $('document').ready(function () {
     var category = "Fashion"
 
     function apithing() {
-
-
         var queryURL = "https://pixabay.com/api/?key=13207618-cd600ee9239da705312ffe8c0&q=fashion+trends&image_type=photo";
 
         //AJAX GET request
@@ -31,11 +29,7 @@ $('document').ready(function () {
                     categoryImg.attr("src", imagePixabay);
                     //prepending the image to the images div
                     $("#images").prepend(categoryImg);
-                    // $("#images2").prepend(categoryImg);
-                    // $("#images").prepend(categoryImg);
-                    // $("#images").prepend(categoryImg);
-                    // $("#images").prepend(categoryImg);
-                    // $("#images").prepend(categoryImg);
+                
                 }
             })
     };
