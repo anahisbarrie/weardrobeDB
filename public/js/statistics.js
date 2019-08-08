@@ -1,180 +1,51 @@
-
 function getStats() {
   $.get('/api/statistics').then(data => {
-    console.log(data)
-  })
-}
+    console.log(`Data: `, data)
+    //Need to loop through the array of objects in order to grab the necessary data and push it into the respective charts
+    for (let i = 0; i < data.length; i++) {
 
-//We need a function that gets the top five most worn articles and .then builds and displays the chart
-const topFive = () => {
-  var chartOne = $('#topFive');
-  var topFive = new Chart(chartOne, {
-    type: 'bar',
-    data: {
-      labels: [`1`, `2`, `3`, `4`, `5`],
-      datasets: [{
-        label: 'Top Five Most Worn',
-        //Need to put in the data below using forloop
-        data: [],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
+      //Need all our arrays that we will eventually be manipulating to plug into the chart data array.
+      let timesWornArray = []
+      let seasonalityArray = []
+      let typeArray = []
+
+      //This section will grab all the times worn and push them into the times worn array. We will use this array for both the top five and least five by slicing the front five and back five from the array once ordered.
+      let currentTimesWorn = data[i].times_worn
+      let currentItemName = data[i].brand + " " + data[i].item_type
+
+      //Push the numbers into times
+      console.log("Current Name: ", currentItemName)
+      console.log("Current Times Worn: ", currentTimesWorn)
+      
+
+      //We need a function that gets the top five most worn articles and .then builds and displays the chart
+      const topFive = () => {
+        var chartOne = $('#topFive');
       }
-    }
-  })
-}
-//Need a function that gets the breakdown of seasonality and .then builds pie chart
-const seasonality = () => {
-  var chartTwo = $('#seasonality');
-  var seasonality = new Chart(chartTwo, {
-    type: 'pie',
-    data: {
-      labels: [`1`, `2`, `3`, `4`, `5`],
-      datasets: [{
-        label: 'Style Breakdown By Seasonality',
-        //Need to put in the data below using forloop
-        data: [],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
+
+      //Need a function that gets the breakdown of seasonality and .then builds pie chart
+      const seasonality = () => {
+        var chartTwo = $('#seasonality');
       }
+
+      //Need a function that gets the breakdown of style type and .then builds a pie chart
+      const style = () => {
+        var chartThree = $('#type');
+      }
+
+      //Need a function that gets the top five least worn articles of clothing .then builds a bar graph and prompts user to delete
+      const leastWorn = () => {
+        var chartFour = $('#leastWorn');
+      }
+
+      //Call all functions
+
+      topFive();
+      // seasonality();
+      // style();
+      // leastWorn();
     }
   })
 }
 
-//Need a function that gets the breakdown of style type and .then builds a pie chart
-const style = () => {
-  var chartThree = $('#type');
-  var type = new Chart(chartThree, {
-    type: 'pie',
-    data: {
-      labels: ["a", "b", "c"],
-      datasets: [{
-        label: 'Breakdown Of Style Type',
-        //Need to put in the data below using forloop
-        data: [44, 22, 4],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
-}
-//Need a function that gets the top five least worn articles of clothing .then builds a bar graph and prompts user to delete
-const leastWorn = () => {
-  var chartFour = $('#leastWorn');
-  var leastWorn = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [`1`, `2`, `3`, `4`, `5`],
-      datasets: [{
-        label: 'Top Five Least Worn',
-        //Need to put in the data below using forloop
-        data: [],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
-}
-
-
-//Call all functions
-  getStats();
-  topFive();
-  // seasonality();
-  // style();
-  // leastWorn();
+getStats();

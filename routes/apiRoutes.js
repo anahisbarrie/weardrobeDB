@@ -34,7 +34,6 @@ module.exports = function(app) {
     var uploadedInfo = { ...req.body, imagelink: updatedfilename}
     console.log("updated information with link ", uploadedInfo)
     db.Example.create(uploadedInfo).then(function(dbExample) {
-
       res.json(dbExample);
     });
   });
