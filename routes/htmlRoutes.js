@@ -29,6 +29,11 @@ module.exports = function(app) {
     res.render("calendar")
   })
 
+  // Load daily outfit page
+  app.get("/outfit", function(req,res){
+    res.render("outfit")
+  })
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

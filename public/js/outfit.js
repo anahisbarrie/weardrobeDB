@@ -43,7 +43,7 @@ OutfitData.getOutfit().then(function(data) {
 var filter = function(data, filter) {
   var pick = [];
   for (var i = 0; i < data.length; i ++) {
-    if (data[i].item_type === filter) {
+    if (data[i].type === filter) {
       keep.push(data[i]);
     }
   }
@@ -58,11 +58,10 @@ var getRandom = function(data) {
 // CHANGE THE FUNCTIONS
 
 // On-click to generate daily outfit
-$("#generateOutfitBtn").on("click", function() );
-
-// On-click to generate the next outfit (same as above)
-$("#nextOutfitBtn").on("click", function() );
-// On-click to save the daly outfit
-$("#saveOutfitBtn").on("click", function() );
+// $("#generateOutfitBtn").on("click", function() );
+// // On-click to generate the next outfit (same as above)
+// $("#nextOutfitBtn").on("click", function() );
+// // On-click to save the daly outfit
+// $("#saveOutfitBtn").on("click", function() );
 
 // for saveOutfit - pass each object into saveOutfit

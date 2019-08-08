@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     price: DataTypes.STRING,
     lastwore: DataTypes.STRING,
     imagelink: DataTypes.STRING,
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    times_worn: DataTypes.INTEGER
   });
   return Example;
 };

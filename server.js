@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/dailyoutfit")(app);
 require("./routes/htmlRoutes")(app);
-require("./routes/chartRoutes")(app);
+// require("./routes/chartRoutes")(app);
 
 
 var syncOptions = { force: false };
