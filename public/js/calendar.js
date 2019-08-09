@@ -10,9 +10,9 @@ $('document').ready(function () {
     var items = [];
     API.getExamples().then(function (response) {
         for (var i = 0; i < response.length; i++) {
-            items.push({ title: response[i].type, start: response[i].lastwore })
-
+            items.push({ title: response[i].type, start: response[i].lastworn })
         }
+        console.log(items)
         var calendarEl = document.getElementById("calendar3");
         var calendar = new FullCalendar.Calendar(calendarEl, {
             eventClick: function (info) {

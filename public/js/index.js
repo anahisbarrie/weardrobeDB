@@ -59,7 +59,7 @@ var refreshExamples = function() {
         .text(example.price)
         .attr("href", "/example/" + example.id);
       var $a6= $("<a>")
-        .text(example.lastwore)
+        .text(example.lastworn)
         .attr("href", "/example/" + example.id);
       var $a7= $("<img>")
       .attr("src", example.imagelink)
@@ -104,7 +104,7 @@ var handleFormSubmit = function(event) {
     color: $exampleColor.val().trim(),
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
-    lastwore: $exampleLastWore.val().trim(),
+    lastworn: $exampleLastWore.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
@@ -149,7 +149,7 @@ e.preventDefault();
     color: $exampleColor.val().trim(),
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
-    lastwore: $exampleLastWore.val().trim(),
+    lastworn: $exampleLastWore.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
