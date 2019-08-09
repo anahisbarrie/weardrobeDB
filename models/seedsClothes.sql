@@ -11,6 +11,6 @@ VALUES
     ("Mikoh", "Bottom", "Pink", "Summer", "Swimwear", 74.99, "2019/06/15", 65, "uploaded_files/89fa9a58-70ba-4342-b513-3f99a0833649_IMG_0282.JPG", "Just too cute"),
     ("Nike", "Top", "Orange", "Spring", "Athleisure", 59.99, "2018/03/12", 456, "uploaded_files/50420eaf-eabd-44dd-b58c-34b37d26b5f6_IMG_0284.JPG", "These are my favorite running shorts."),
     ("Hugo Boss", "Bottom", "Black", "Fall", "Business", 454.99, "2019/08/22", 165, "uploaded_files/be2ef090-7cab-4d58-8a2e-698686b65681_IMG_0283.JPG", "I wore this when I closed my first deal!"),
-    ("Pedal & Pup", "Bottom", "Beige", "Spring", "Business", 229.99, "2018/09/04", 456, "uploaded_files/a3b5e2fb-11a2-442c-9b8c-2ee1485b0f46_Lz%i2TFuSqWh%EzkFTJRdw.jpg", "My boss loves this skirt.");
+    ("Pedal & Pup", "Bottom", "Beige", "Spring", "Business", 229.99, "2018/09/04", 333, "uploaded_files/a3b5e2fb-11a2-442c-9b8c-2ee1485b0f46_Lz%i2TFuSqWh%EzkFTJRdw.jpg", "My boss loves this skirt.");
 
 
