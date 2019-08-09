@@ -4,9 +4,7 @@ module.exports = function (app) {
   app.get('/', function (req, res) {
     res.render('home');
   });
-  // Load index page
-  app.get("/index", function (req, res) {
-  });
+  
   // Load index page
   app.get("/index", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
@@ -44,7 +42,11 @@ module.exports = function (app) {
 
   app.get("/calendar", function (req, res) {
     res.render("calendar")
-  })
+  });
+
+  app.get("/inspo", function (req, res) {
+    res.render("inspo")
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

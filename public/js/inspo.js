@@ -1,8 +1,8 @@
 //API KEY
 var APIKey = "13207618-cd600ee9239da705312ffe8c0";
-
+console.log("IM LOADED")
 $('document').ready(function () {
-
+console.log("IM READY")
     //Pixabay API//AJAX request
     var category = "Fashion"
 
