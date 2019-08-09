@@ -82,12 +82,11 @@ describe("POST/api/examples", function () {
         style: "pants",
         price: "98",
         lastwore: "21/21/2019",
-       imagelink: "RenderedImage.jpg",
+       imagelink: "/Users/anahisbolivar/Desktop/weardrobedb2/weardrobeDB/uploaded_files/1e65e4cc-5b4b-4126-a93d-0a7b273415fb_Screen Shot 2019-05-07 at 2.44.30 PM.png",
         description: "texting dummy data"
       }
     
       request.post("/api/examples")
-
         .field("brand", "gucci")
         .field("type", "hangbag")
         .field("color", "blue")
