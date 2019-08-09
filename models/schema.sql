@@ -3,17 +3,33 @@ CREATE DATABASE closetdb;
 
 USE closetdb;
 
-CREATE TABLE Example (
+CREATE TABLE example (
     id INT NOT NULL AUTO_INCREMENT,
     brand VARCHAR(255) NOT NULL,
     type VARCHAR(255) NOT NULL,
     color VARCHAR(255) NOT NULL,
-    style VARCHAR(255) NOT NULL, 
+    seasonality VARCHAR(255) NOT NULL, 
+    style VARCHAR(255) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
-    lastwore DATE NULL,
+    lastworn DATE NULL,
+    timesworn INT NOT NULL,
     imagelink VARCHAR(1024) NULL,
-    description VARCHAR(2000) NULL,
-    times_worn INT NOT NULL,
+    description VARCHAR(1024) NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE clothes (
+    id INT NOT NULL AUTO_INCREMENT,
+    brand VARCHAR(255) NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    color VARCHAR(255) NOT NULL,
+    seasonality VARCHAR(255) NOT NULL, 
+    style VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    lastworn DATE NULL,
+    timesworn INT NOT NULL,
+    imagelink VARCHAR(1024) NULL,
+    description VARCHAR(1024) NULL,
     PRIMARY KEY (id)
 );
 
