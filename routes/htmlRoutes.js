@@ -6,6 +6,9 @@ module.exports = function (app) {
   });
   // Load index page
   app.get("/index", function (req, res) {
+  });
+  // Load index page
+  app.get("/index", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
         msg: "Welcome!",
