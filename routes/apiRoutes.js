@@ -28,7 +28,7 @@ module.exports = function(app) {
 
   app.post("/api/examples", upload.single("userpicture"), function(req, res) {
     console.log("data from frontend: ", req.body);
-    console.log("file", req.file);var PORT = process.env.PORT || 3000;
+    console.log("file", req.file);
     var PORT = process.env.PORT || 3000;
   var updatedfilename = "http://localhost:" + PORT + "/uploaded_files/" + req.file.filename
     var uploadedInfo = { ...req.body, imagelink: updatedfilename}
@@ -36,6 +36,7 @@ module.exports = function(app) {
     db.Example.create(uploadedInfo).then(function(dbExample) {
 
       res.json(dbExample);
+      // res.send(req.body)
     });
   });
 
