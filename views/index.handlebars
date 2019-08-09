@@ -1,13 +1,12 @@
 <div id="home">
-  <div class="container">
+  <div class="containerIndex">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" method="POST" enctype="multipart/form-data" action="/api/examples" id="inputform"> 
         {{!-- // enctype allows to send images --}}
           <div class="form-group">
-            <label for="example-text">Brand Name</label>
+            <label for="example-text" >Brand Name</label>
             <input type="text" id="item-brand" class="form-control" aria-describedby="example-text"
               placeholder="Brand Name">
           </div>
