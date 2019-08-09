@@ -32,18 +32,12 @@ module.exports = function(app) {
   app.get("/api/allClothes", function(req, res) {
     // console.log(req.body);
     db.Example.findAll({ }).then(function(dbAllClothes) {
+      // console.log(dbAllClothes);
       res.json(dbAllClothes);
-      console.log(dbAllClothes);
+      res.send("outfit",
+      {clothes: dbAllClothes});
     });
   });
-
-  // app.get("/allClothes", function(req, res) {
-  //   // console.log(req.body);
-  //   db.Example.findAll({ }).then(function(dbAllClothes) {
-  //     res.send("outfit",
-  //     {clothes: dbAllClothes});
-  //   });
-  // });
 
   // API route to update item in db
   app.post("/api/updateItem", function(req, res) {
@@ -59,4 +53,20 @@ module.exports = function(app) {
       console.log(error);
     })
   });
+
+  app.post("/api/saveOutfit", function(req, res) {
+
+    var topId = req.body.top_id;
+    // var bottomId = req.body.id;
+    // var accessoryId = req.body.id;
+
+    db.outfit.update(
+      {top_id: topId},
+      ).then(function(results){
+        console.log(results)
+      }).catch(error => {
+        console.log(error);
+      })
+  });
+
 };

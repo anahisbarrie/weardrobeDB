@@ -6,7 +6,7 @@ var OutfitData = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/top",
+      url: "api/saveOutfit",
       data: JSON.stringify(saveOutfit)
     });
   },
@@ -24,10 +24,19 @@ var OutfitData = {
   }
 };
 
+// Initialize var
+var topObject;
+var bottomObject;
+var accessoryObject;
+
+// console.log(topObject, bottomObject, accessoryObject);
+
 // Function to get a random outfit
 var generateOutfit = () => OutfitData.getOutfits().then(function(data) {
 
-  // Clear out images
+  console.info(data);
+
+  // Clear out previous images
   $("#topOutfit").empty();
   $("#bottomOutfit").empty();
   $("#accessoryOutfit").empty();
@@ -42,14 +51,12 @@ var generateOutfit = () => OutfitData.getOutfits().then(function(data) {
   // Randomize Outfit
   // Top
   var topRandom = getRandom(top);
-
   // Bottom
   var bottomRandom = getRandom(bottom);
-
   // Accessory
   var accessoryRandom = getRandom(accessory);
 
-  // Append images
+  // Append images to pg
   // Top
   var topImg = $("<img width=400 height=200>");
   topImg.attr("src", topRandom.image_link);
@@ -65,31 +72,16 @@ var generateOutfit = () => OutfitData.getOutfits().then(function(data) {
   accessoryImg.attr("src", accessoryRandom.image_link);
   $("#accessoryOutfit").append(accessoryImg);
 
+  // Update global vars
+  topObject = topRandom;
+  bottomObject = bottomRandom;
+  accessoryObject = accessoryRandom;
 
-
-
-  // SAVE BUTTON
-  // var bottomID = bottomRandom.id;
-
-  // var bottomCounter = bottomRandom.times_worn
-  // bottomCounter++;
-  // $.ajax({
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   type: "POST",
-  //   url: "/api/updateItem",
-  //   data: JSON.stringify({
-  //     times_worn: bottomCounter,
-  //     id: bottomID
-  //   })
-  // });
-
+  console.log(topObject, bottomObject, accessoryObject);
 });
 
-// Function to filter for item type
+// Function to filter for item type - returns array of all items for that type
 var filter = function(data, filter) {
-  console.log("hi!");
   var pick = [];
 
   // For every filtered item, push into array
@@ -101,36 +93,94 @@ var filter = function(data, filter) {
   })
   console.log(pick);
   return pick;
-
-  // for (var i = 0; i < data.length; i ++) {
-  //   if (data[i].item_type === filter) {
-  //     keep.push(data[i]);
-  //   }
-  //   console.log("Data:", data[i]);
-  // }
-  // console.log("PICK", pick);
-  // return pick;
 }
 
+// Get a random item from array
 var getRandom = function(data) {
   return data[Math.floor(Math.random()*data.length)];
 }
 
-// CHANGE THE FUNCTIONS
-
-// var testFunc = OutfitData.getOutfits().then(function(data) {
-//   console.info(data)
-// });
-
+// Button handlers
 // On-click to generate daily outfit
 $("#generateOutfitBtn").on("click", generateOutfit);
   
-// // On-click to generate the next outfit (same as above)
-// $("#nextOutfitBtn").on("click", function() );
+// On-click to generate the next outfit (same as above)
+$("#nextOutfitBtn").on("click", generateOutfit);
 
-// // On-click to save the daly outfit
+// On-click to save the daly outfit
 $("#saveOutfitBtn").on("click", function() {
   OutfitData.saveOutfit(selectedOutfit)
+
+  // IDs
+  var topID = topRandom.id;
+  var bottomID = bottomRandom.id;
+  var accessoryID = accessoryRandom.id;
+
+  // Counters
+  var topCounter = topRandom.times_worn;
+  var bottomCounter = bottomRandom.times_worn;
+  var accessoryCounter = accessoryRandom.times_worn;
+
+  // +1 for each item type
+  topCounter++;
+  bottomCounter++;
+  accessoryCounter++;
+
+  // AJAX for top
+  $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "/api/updateItem",
+    data: JSON.stringify({
+      times_worn: topCounter,
+      id: topID
+    })
+  });
+
+  // AJAX for bottom
+  $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "/api/updateItem",
+    data: JSON.stringify({
+      times_worn: bottomCounter,
+      id: bottomID
+    })
+  });
+
+  // AJAX for accessory
+  $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "/api/updateItem",
+    data: JSON.stringify({
+      times_worn: accessoryCounter,
+      id: accessoryID
+    })
+  });
+
+  // AJAX for outfit
+  $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "/api/saveOutfit",
+    data: JSON.stringify({
+      top_id: topID,
+      bottom_id: bottomID,
+      accessory_id: accessoryID
+    })
+  });
 });
+
+
+
 
 // for saveOutfit - pass each object into saveOutfit
