@@ -51,29 +51,64 @@ function getStats() {
     let topFiveNames = data.itemNameArray.splice(-5, 5)
 
     //We are calling the seasonality chart builder function with an argument that is a separate function which is called to return all the percentages of each season and their respective names. It will return an array of objects with the season name and its percentage.
-    seasonality(seasonPercentageCalculator(data.seasonalityArray))
-    
+    let dataForSeasonalityFunction = seasonPercentageCalculator(data.seasonalityArray)
+
+    let dataForStyleFunction = stylePercentageCalculator(data.styleArray)
 
     return {
       bottomFiveTimesWorn,
       topFiveItemsWorn,
       bottomFiveNames,
-      topFiveNames
+      topFiveNames,
+      dataForSeasonalityFunction,
+      dataForStyleFunction
     }
 
   }).then(data => {
-    //Call all functions
-    // seasonality();
-    // style();
+
+    //Empty Arrays to be pushed into pie/doughnut charts
+    let seasons = []
+    let seasonCounts = []
+    let style = []
+    let styleCounts = []
+
+    //Need a for loop to distribute the counts and saasons into their respective arrays so we can input them into the chart
+    for (let i = 0; i < data.dataForSeasonalityFunction.length; i++) {
+      //push the values into appropriate array
+      seasons.push(data.dataForSeasonalityFunction[i].season)
+      seasonCounts.push(data.dataForSeasonalityFunction[i].count)
+    }
+
+      //Need a for loop to distribute the counts and saasons into their respective arrays so we can input them into the chart
+      for (let i = 0; i < data.dataForStyleFunction.length; i++) {
+        //push the values into appropriate array
+        style.push(data.dataForStyleFunction[i].style)
+        styleCounts.push(data.dataForStyleFunction[i].count)
+      }
+
+    //Call least worn and most worn functions
     leastWorn(data.bottomFiveTimesWorn, data.bottomFiveNames);
     topFive(data.topFiveItemsWorn, data.topFiveNames);
+
+    return {
+      seasons,
+      seasonCounts,
+      style,
+      styleCounts
+    }
+
+  }).then(data => {
+
+    //Call seasonality and style pie charts
+    seasonality(data.seasons, data.seasonCounts)
+    style(data.style, data.styleCounts);
+
   })
 }
 
 //We need a function that gets the top five most worn articles and .then builds and displays the chart
 function topFive(topFive, names) {
   var chartOne = $('#topFive');
-  console.log(`this is working in final .then()`, topFive)
   new Chart(chartOne, {
     type: 'bar',
     data: {
@@ -119,30 +154,129 @@ const leastWorn = (bottomFive, names) => {
   })
 }
 
-
 //Need a function that gets the breakdown of seasonality and .then builds pie chart
-const seasonality = (seasonPercentageCalculator) => {
-  var chartTwo = $('#seasonality');
+const seasonality = (seasons, counts) => {
+  console.log("Seasons: ", seasons)
+  console.log("Counts: ", counts)
+
+  var chartTwo = $('#seasonality')
+  new Chart(chartTwo, {
+    type: 'pie',
+    data: {
+      labels: seasons,
+      datasets: [{
+        label: 'Style Breakdown By Seasonality',
+        data: counts
+      }]
+    },
+    options: {
+
+    }
+  })
 }
 
 //Need a function that gets the breakdown of style type and .then builds a pie chart
-const style = () => {
-  var chartThree = $('#type');
+const style = (style, counts) => {
+  var chartThree = $('#style');
+  new Chart(chartThree, {
+    type: 'doughnut',
+    data: {
+      labels: style,
+      datasets: [{
+        label: 'Style Breakdown By Seasonality',
+        data: counts
+      }]
+    },
+    options: {
+    }
+  })
 }
 
 //We need a function that cycles through the seasonality array and using a switch statement counts each instance of the respective season and adds 1 to the counter for that season. Once the loop is done, divide each season counter by the length of the array. This will give you the percentage each season type.
 const seasonPercentageCalculator = seasonalityArray => {
-  let Summer = {season: "Summer", count: 0}
-  let Fall = {season: "Fall", count: 0}
-  let Winter = {season: "Winter", count: 0}
-  let Spring = {season: "Spring", count: 0}
+  let Summer = {
+    season: "Summer",
+    count: 0
+  }
+  let Fall = {
+    season: "Fall",
+    count: 0
+  }
+  let Winter = {
+    season: "Winter",
+    count: 0
+  }
+  let Spring = {
+    season: "Spring",
+    count: 0
+  }
 
-  for(let i = 0; i < seasonalityArray.length; i++) {
-    switch(seasonalityArray[i]) {
-
+  for (let i = 0; i < seasonalityArray.length; i++) {
+    switch (seasonalityArray[i]) {
+      case "Summer":
+        Summer.count++
+        break;
+      case "Fall":
+        Fall.count++
+        break;
+      case "Winter":
+        Winter.count++
+        break;
+      case "Spring":
+        Spring.count++
+        break;
+      default:
+        console.log("This item has no season")
     }
   }
   return [Summer, Fall, Winter, Spring]
+}
+
+//We need a function that cycles through the style array and using a switch statement counts each instance of the respective season and adds 1 to the counter for that season.
+const stylePercentageCalculator = styleArray => {
+  let Formal = {
+    style: "Formal",
+    count: 0
+  }
+  let Swimwear = {
+    style: "Swimwear",
+    count: 0
+  }
+  let Athleisure = {
+    style: "Athleisure",
+    count: 0
+  }
+  let Business = {
+    style: "Business",
+    count: 0
+  }
+  let Casual = {
+    style: "Casual",
+    count: 0
+  }
+
+  for (let i = 0; i < styleArray.length; i++) {
+    switch (styleArray[i]) {
+      case "Formal":
+        Formal.count++
+        break;
+      case "Swimwear":
+        Swimwear.count++
+        break;
+      case "Athleisure":
+        Athleisure.count++
+        break;
+      case "Business":
+        Business.count++
+        break;
+      case "Casual":
+        Casual.count++
+        break;
+      default:
+        console.log("This item has no style")
+    }
+  }
+  return [Formal, Swimwear, Athleisure, Business, Casual]
 }
 
 getStats();
