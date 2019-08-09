@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
       item_description: DataTypes.TEXT
     },
     {
-      timestamps: false
+      timestamps: false,
+      freezeTableName: true
     }
   );
   return Clothes;

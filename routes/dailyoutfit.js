@@ -28,6 +28,7 @@ module.exports = function(app) {
     });
   });
 
+  // Route to retrieve all clothes in the db
   app.get("/api/allClothes", function(req, res) {
     // console.log(req.body);
     db.Example.findAll({ }).then(function(dbAllClothes) {
@@ -36,11 +37,26 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/allClothes", function(req, res) {
-    // console.log(req.body);
-    db.Example.findAll({ }).then(function(dbAllClothes) {
-      res.send("outfit",
-      {clothes: dbAllClothes});
-    });
+  // app.get("/allClothes", function(req, res) {
+  //   // console.log(req.body);
+  //   db.Example.findAll({ }).then(function(dbAllClothes) {
+  //     res.send("outfit",
+  //     {clothes: dbAllClothes});
+  //   });
+  // });
+
+  // API route to update item in db
+  app.post("/api/updateItem", function(req, res) {
+    var times_worn = req.body.times_worn;
+    var item_ID = req.body.id;
+    console.log(times_worn, item_ID);
+
+    db.Example.update(
+      {times_worn: times_worn},
+      {where: {id: item_ID}}).then(function(results) {
+      console.log(results)
+    }).catch(error => {
+      console.log(error);
+    })
   });
 };
