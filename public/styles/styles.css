@@ -48,13 +48,13 @@
 }
 
 @keyframes swing {
-    0% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
+    0% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
 }
 
-.hanger2:hover {
+/* .hanger2:hover {
   animation-play-state: running;
-}
+} */
 
 .calendarIcon2:hover {
   animation-play-state: running;
@@ -76,8 +76,9 @@
   transform-origin: center -20px;
   float: left;
   
-
 }
+
+
 .weardrobebtn{
     width: 300px;
     background: url("https://i.ibb.co/bbvKfpW/weardrobedb.png");
