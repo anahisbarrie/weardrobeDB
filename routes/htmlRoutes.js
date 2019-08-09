@@ -1,8 +1,11 @@
 var db = require("../models");
 
 module.exports = function (app) {
+  app.get('/', function (req, res) {
+    res.render('home');
+  });
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/index", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
         msg: "Welcome!",
