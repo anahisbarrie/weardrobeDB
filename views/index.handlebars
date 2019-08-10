@@ -6,38 +6,38 @@
         <form class="clearfix mb-4" method="POST" enctype="multipart/form-data" action="/api/examples" id="inputform"> 
         {{!-- // enctype allows to send images --}}
           <div class="form-group">
-            <label for="example-text" >Brand Name</label>
+            <label for="example-text" class ="txtColor">Brand Name</label>
             <input type="text" id="item-brand" class="form-control" aria-describedby="example-text"
               placeholder="Brand Name">
           </div>
           <div class="form-group">
-            <label for="example-text">Item Type</label>
+            <label for="example-text" class="txtColor">Item Type</label>
             <input type="text" id="item-type" class="form-control" aria-describedby="example-text"
               placeholder="Top / Bottom / Accessories">
           </div>
           <div class="form-group">
-            <label for="example-text">Color</label>
+            <label for="example-text" class="txtColor">Color</label>
             <input type="text" id="item-color" class="form-control" aria-describedby="example-text"
               placeholder="color">
           </div>
           <div class="form-group">
-            <label for="example-text">Style</label>
+            <label for="example-text" class = "txtColor">Style</label>
             <input type="text" id="item-style" class="form-control" aria-describedby="example-text"
               placeholder="long leave/ short leave / skirt / long pants / short pants">
           </div>
           <div class="form-group">
-            <label for="example-text">Price</label>
+            <label for="example-text" class = "txtColor">Price</label>
             <input type="number" id="item-price" class="form-control" aria-describedby="example-text"
               placeholder="$">
           </div>
         
           <div class="form-group">
-            <label for="example-text">When did you last wear this item?</label>
+            <label for="example-text" class = "txtColor">When did you last wear this item?</label>
             <input type="date" id="last-wore" class="form-control" aria-describedby="example-text"
               placeholder="MM/DD/YEAR">
           </div>
           <div class="form-group">
-            <label for="example-text">Add picture</label>
+            <label for="example-text" class = "txtColor">Add picture</label>
             <input type="file" name="userpicture" id="input-picture" class="form-control">
           </div>
         <div class="dropdown show">
@@ -55,7 +55,7 @@
         </div>
 
           <div class="form-group">
-            <label for="example-description">Notes on this item</label>
+            <label for="example-description" class = "txtColor">Notes on this item</label>
             <textarea class="form-control" id="item-description" aria-describedby="example-description"
               placeholder="Enter Example Description"></textarea>
           </div>
@@ -74,6 +74,7 @@
     </div>
   </div>
 </div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {{!-- //JQUARY FORM to add additional files like pictures--}}
