@@ -31,6 +31,7 @@
             <input type="number" id="item-price" class="form-control" aria-describedby="example-text"
               placeholder="$">
           </div>
+        
           <div class="form-group">
             <label for="example-text">When did you last wear this item?</label>
             <input type="date" id="last-wore" class="form-control" aria-describedby="example-text"
@@ -40,6 +41,20 @@
             <label for="example-text">Add picture</label>
             <input type="file" name="userpicture" id="input-picture" class="form-control">
           </div>
+        <div class="dropdown show">
+          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+           Add Season
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Wintern</a>
+            <a class="dropdown-item" href="#">Fall</a>
+            <a class="dropdown-item" href="#">Spring</a>
+            <a class="dropdown-item" href="#">Summer</a>
+          </div>
+        </div>
+
           <div class="form-group">
             <label for="example-description">Notes on this item</label>
             <textarea class="form-control" id="item-description" aria-describedby="example-description"

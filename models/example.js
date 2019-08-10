@@ -4,13 +4,17 @@ module.exports = function (sequelize, DataTypes) {
       brand: DataTypes.STRING,
       type: DataTypes.STRING,
       color: DataTypes.STRING,
-      seasonality: DataTypes.STRING,
       style: DataTypes.STRING,
       price: DataTypes.STRING,
-      lastworn: DataTypes.STRING,
-      timesworn: DataTypes.INTEGER,
+      lastwore: DataTypes.STRING,
+      times_worn: DataTypes.INTEGER,
       imagelink: DataTypes.STRING,
-      description: DataTypes.TEXT
+      description: DataTypes.TEXT,
+      seasonality: DataTypes.STRING,
+      // summer: DataTypes.STRING,
+      // winter: DataTypes.STRING,
+      // fall: DataTypes.STRING,
+      // spring: DataTypes.STRING
     }, {
       timestamps: false
     });

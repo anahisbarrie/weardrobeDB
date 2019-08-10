@@ -6,11 +6,17 @@ var $exampleType = $("#item-type");
 var $exampleColor = $("#item-color");
 var $exampleStyle = $("#item-style");
 var $examplePrice = $("#item-price");
-var $exampleLastWore = $("#last-wore");
+var $exampleLastWorn = $("#last-wore");
 var $exampleDescription = $("#item-description");
 var $exampleForm = $("#inputform");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $exampledropdownmenu = $("#dropdownMenuLink");
+var $examplesummer = $("#summer")
+var $examplewinter = $("#winter")
+var $examplefall = $("#fall")
+var $examplespring = $("#spring")
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -52,9 +58,9 @@ var refreshExamples = function() {
       // var $a3 = $("<a>")
       //   .text(example.color)
       //   .attr("href", "/example/" + example.id);
-      var $a4 = $("<a>")
-        .text(example.style)
-        .attr("href", "/example/" + example.id);
+      // var $a4 = $("<a>")
+      //   .text(example.style)
+      //   .attr("href", "/example/" + example.id);
       var $a5 = $("<a>")
         .text(example.price)
         .attr("href", "/example/" + example.id);
@@ -72,7 +78,7 @@ var refreshExamples = function() {
         .append($a)
         // .append($a2)
         // .append($a3)
-        .append($a4)
+        // .append($a4)
         // .append($a5)
         // .append($a6)
       
@@ -105,6 +111,11 @@ var handleFormSubmit = function(event) {
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
     lastwore: $exampleLastWore.val().trim(),
+    seasonality: $exampledropdownmenu.val().trim(),
+    summer: $examplesummer.val().trim(),
+    winter: $examplewinter.val().trim(),
+    fall: $examplefall.val().trim(),
+    spring: $examplespring.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
@@ -122,8 +133,15 @@ var handleFormSubmit = function(event) {
   $exampleColor.val("");
   $exampleStyle.val("");
   $examplePrice.val("");
-  $exampleLastWore.val("");
+  $exampleLastWorn.val("");
+  $exampledropdownmenu.val("");
+  $examplesummer.val("");
+  $examplewinter.val("");
+  $examplefall.val("");
+  $examplespring.val("");
   $exampleDescription.val("");
+ 
+
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -149,7 +167,12 @@ e.preventDefault();
     color: $exampleColor.val().trim(),
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
-    lastwore: $exampleLastWore.val().trim(),
+    lastwore: $exampleLastWorn.val().trim(),
+    seasonality: $exampledropdownmenu.val().trim(),
+    // summer: $examplesummer.val().trim(),
+    // winter: $examplewinter.val().trim(),
+    // fall: $examplefall.val().trim(),
+    // spring: $examplespring.val().trim(),
     description: $exampleDescription.val().trim()
   };
 
@@ -170,7 +193,12 @@ success: function(results){
   $exampleColor.val("");
   $exampleStyle.val("");
   $examplePrice.val("");
-  $exampleLastWore.val("");
+  $exampleLastWorn.val("");
+  $exampledropdownmenu.val("");
+  $examplesummer.val("");
+  $examplewinter.val("");
+  $examplefall.val("");
+  $examplespring.val("");
   $exampleDescription.val("");
 return false;
  
