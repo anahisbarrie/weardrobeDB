@@ -118,8 +118,8 @@ $("#saveOutfitBtn").on("click", function() {
 
   // Counters
   var topCounter = topRandom.times_worn;
-  var bottomCounter = bottomRandom.times_worn;
-  var accessoryCounter = accessoryRandom.times_worn;
+  var bottomCounter = bottomRandom.timesworn;
+  var accessoryCounter = accessoryRandom.timesworn;
 
   // +1 for each item type
   topCounter++;
@@ -134,7 +134,7 @@ $("#saveOutfitBtn").on("click", function() {
     type: "POST",
     url: "/api/updateItem",
     data: JSON.stringify({
-      times_worn: topCounter,
+      timesworn: topCounter,
       id: topID
     })
   });
@@ -147,7 +147,7 @@ $("#saveOutfitBtn").on("click", function() {
     type: "POST",
     url: "/api/updateItem",
     data: JSON.stringify({
-      times_worn: bottomCounter,
+      timesworn: bottomCounter,
       id: bottomID
     })
   });
@@ -160,7 +160,7 @@ $("#saveOutfitBtn").on("click", function() {
     type: "POST",
     url: "/api/updateItem",
     data: JSON.stringify({
-      times_worn: accessoryCounter,
+      timesworn: accessoryCounter,
       id: accessoryID
     })
   });
