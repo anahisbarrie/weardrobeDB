@@ -10,7 +10,7 @@ $('document').ready(function () {
     var items = [];
     API.getExamples().then(function (response) {
         for (var i = 0; i < response.length; i++) {
-            items.push({ title: response[i].type, start: response[i].lastworn })
+            items.push({ title: response[i].type, start: response[i].lastwore })
         }
         console.log(items)
         var calendarEl = document.getElementById("calendar3");

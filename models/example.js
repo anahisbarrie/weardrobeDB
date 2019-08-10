@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
       style: DataTypes.STRING,
       price: DataTypes.STRING,
       lastwore: DataTypes.STRING,
-      timesworn: DataTypes.INTEGER,
+      times_worn: DataTypes.INTEGER,
       imagelink: DataTypes.STRING,
       description: DataTypes.TEXT,
       seasonality: DataTypes.STRING
