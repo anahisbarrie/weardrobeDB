@@ -51,7 +51,7 @@
 
 /* Animation of Weardrobe button */
 .swing{
-  animation: swing ease-in-out 1s infinite alternate;
+  animation: swing ease-in-out 5s infinite alternate;
   transform-origin: center -20px;
   float: left;
   animation-play-state: paused;
@@ -67,6 +67,11 @@
 } */
 
 .calendarIcon2:hover {
+  animation-play-state: running;
+
+}
+
+.dress2:hover {
   animation-play-state: running;
 
 }
@@ -92,6 +97,7 @@
 .weardrobebtn{
     width: 300px;
     background: url("https://i.ibb.co/bbvKfpW/weardrobedb.png");
+    /* background: url("https://i.ibb.co/N77ZkQ6/weardrobedblogo.png"); */
     height: 300px;
     line-height: 300px;
     font-size: 1.3rem;
@@ -149,20 +155,34 @@
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
-.random{
-  width: 100px;
-  height: 100px;
+.indexBtn{
+  width: 200px;
+  height: 200px;
   line-height: 100px;
   font-size: 1.3rem;
-  /* background: url; */
   position: absolute;
-  left: 900px;
+  left: 700px;
   right: 300px;
   top: 500px;
   border-radius: 50%;
   border:none;
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.dress {
+  line-height: 300px;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 300px;
+  left:930px;
+  top: 570px;
+  border-radius: 50%;
+  border:none;
+  /* animation: swing ease-in-out 5s infinite alternate; */
+  transform-origin: center -20px;
+  float: left;
+  
 }
 
 /* Community Gallery */
