@@ -10,6 +10,7 @@ var PORT = process.env.PORT || 3000;
 // User Auth
 var session = require("express-session");
 var bodyParser = require("body-parser");
+var passport = require("passport");
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));

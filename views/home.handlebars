@@ -8,12 +8,13 @@
             </div>
             <div class="modal-body">
                 <p>Welcome to weardrobeDB</p>
-                <form>
+                <form id="signin" name="signin" method="post" action="signin">>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
+                        <input class="form-control text" type="text" name="email" placeholder="Email@email.com" id="userEmail">
+                        {{!-- <input type="text" class="form-control" placeholder="Email Address" id="userEmail"> --}}
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" id="userPassword">
                     </div>
                     <button type="submit" class="btn btn-primary" id="userSignInBtn">Enter</button>
                 </form>

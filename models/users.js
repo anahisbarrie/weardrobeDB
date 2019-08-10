@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-
 // For password hashing
 var bcrypt = require("bcryptjs");
 
@@ -33,8 +32,13 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   // Hash PW before creation
-  User.hook("beforeCreate", function(user){
+  // User.hook("beforeCreate", function(user){
+  //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  // });
+
+  User.beforeCreate(function(user, options){
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
+
   return User;
 };
