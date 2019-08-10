@@ -17,15 +17,17 @@ module.exports = function (app) {
 
   })
 
+
+
   // MEMBERS PAGE
   app.get("/members", userAuthenticated, function(req, res){
     res.sendFile(path.join(__dirname, "../public/"))
   })
 
 
-  // app.get('/', function (req, res) {
-  //   res.render('home');
-  // });
+  app.get('/', function (req, res) {
+    res.render('home');
+  });
   
   // Load index page
   app.get("/index", function (req, res) {
