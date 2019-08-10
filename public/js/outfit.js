@@ -59,17 +59,17 @@ var generateOutfit = () => OutfitData.getOutfits().then(function(data) {
   // Append images to pg
   // Top
   var topImg = $("<img width=300 height=250>");
-  topImg.attr("src", topRandom.image_link);
+  topImg.attr("src", topRandom.imagelink);
   $("#topOutfit").append(topImg);
 
   // Bottom
   var bottomImg = $("<img width=300 height=250>");
-  bottomImg.attr("src", bottomRandom.image_link);
+  bottomImg.attr("src", bottomRandom.imagelink);
   $("#bottomOutfit").append(bottomImg);
 
   // Accessory
   var accessoryImg = $("<img width=200 height=150>");
-  accessoryImg.attr("src", accessoryRandom.image_link);
+  accessoryImg.attr("src", accessoryRandom.imagelink);
   $("#accessoryOutfit").append(accessoryImg);
 
   // Update global vars
@@ -86,7 +86,7 @@ var filter = function(data, filter) {
 
   // For every filtered item, push into array
   data.forEach(e => {
-    if (e.item_type === filter) {
+    if (e.type === filter) {
       // console.log(e);
       pick.push(e);
     }
