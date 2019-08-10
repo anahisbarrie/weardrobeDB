@@ -56,12 +56,16 @@ module.exports = function(app) {
 
   app.post("/api/saveOutfit", function(req, res) {
 
+    // Set vars for each ID
     var topId = req.body.top_id;
-    // var bottomId = req.body.id;
-    // var accessoryId = req.body.id;
+    var bottomId = req.body.id;
+    var accessoryId = req.body.id;
 
+    // Update outfit database with ids
     db.outfit.update(
       {top_id: topId},
+      {bottom_id: bottomId},
+      {accessory_id: accessoryId}
       ).then(function(results){
         console.log(results)
       }).catch(error => {

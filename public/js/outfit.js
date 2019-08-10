@@ -180,7 +180,4 @@ $("#saveOutfitBtn").on("click", function() {
   });
 });
 
-
-
-
 // for saveOutfit - pass each object into saveOutfit
