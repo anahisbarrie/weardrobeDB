@@ -2,7 +2,7 @@ var db = require("../models");
 
 // User Auth
 var path = require("path");
-var userAuthenticated = require("../config/middleware/userAuthenticated")
+var userAuthenticated = require("../config/middleware/userAuthenticated");
 
 module.exports = function (app) {
 

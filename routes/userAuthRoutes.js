@@ -1,6 +1,7 @@
 // Req models, passport
 var db = require("../models");
 var passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/userAuthenticated");
 
 module.exports = function(app) {
     // If user has valid login, send to page or else error
@@ -29,16 +30,10 @@ module.exports = function(app) {
     });
 
     // Retrieve user data
-    app.get("/api/userData", function(req,res){
-        if (!req.user) {
-            // User isn't logged in
-            res.json({});
-        }
-        else {
-            res.json({
-                email: req.user.email,
-                id: req.user.id
-            });
-        }
+    app.get("/api/userData", isAuthenticated, function(req,res){
+        res.json({
+            email: req.user.email,
+            id: req.user.id
+        });
     });
 }
