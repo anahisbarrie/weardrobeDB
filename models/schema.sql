@@ -42,10 +42,12 @@ CREATE TABLE users (
     PRIMARY KEY (user_id)
 );
 
--- CREATE TABLE daily (
---     date DATE NOT NULL,
---     outfit_id INT NOT NULL AUTO_INCREMENT,
---     -- outfit_combo <top_id, button_id, acc_id>
---     user_id INT NOT NULL,
---     PRIMARY KEY (date)
--- );
+CREATE TABLE outfit (
+    outfit_id INT NOT NULL AUTO_INCREMENT,
+    date DATE NULL,
+    top_id INT NOT NULL,
+    bottom_id INT NOT NULL,
+    accessory_id INT NOT NULL,
+    user_id INT NULL,
+    PRIMARY KEY (outfit_id)
+);

@@ -16,7 +16,8 @@ module.exports = function (sequelize, DataTypes) {
       // fall: DataTypes.STRING,
       // spring: DataTypes.STRING
     }, {
-      timestamps: false
+      timestamps: false,
+      freezeTableName: true
     });
   return Example;
 };
