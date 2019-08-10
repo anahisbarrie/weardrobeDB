@@ -39,7 +39,8 @@ describe("GET /api/examples", function () {
         lastwore: "21/21/2019",
         imagelink: "kshjf.png",
         description: "texting dummy data",
-        times_worn: 55
+        times_worn: 55,
+        seasonality: "summer"
       }
 
     ]).then(function () {
@@ -47,17 +48,12 @@ describe("GET /api/examples", function () {
       request.get("/api/examples").end(function (err, res) {
         // var responseStatus = res.status;
         // var responseBody = res.body;
-
         // Run assertions on the response
-
         // expect(err).to.be.null;
-
         // expect(responseStatus).to.equal(200);
-
         // expect(responseBody)
         //   .to.be.an("array")
         //   .that.has.lengthOf(1);
-
         expect(res.body[0])
           .to.be.an("object")
           .that.includes({
@@ -69,7 +65,8 @@ describe("GET /api/examples", function () {
             lastwore: "21/21/2019",
             imagelink: "kshjf.png",
             description: "texting dummy data",
-            times_worn: 55
+            times_worn: 55,
+            seasonality: "summer"
           });
 
         // The `done` function is used to end any asynchronous tests

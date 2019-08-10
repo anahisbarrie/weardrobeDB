@@ -11,6 +11,10 @@ module.exports = function (sequelize, DataTypes) {
       imagelink: DataTypes.STRING,
       description: DataTypes.TEXT,
       seasonality: DataTypes.STRING,
+      // summer: DataTypes.STRING,
+      // winter: DataTypes.STRING,
+      // fall: DataTypes.STRING,
+      // spring: DataTypes.STRING
     }, {
       timestamps: false,
       freezeTableName: true
