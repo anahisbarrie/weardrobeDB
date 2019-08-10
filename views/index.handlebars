@@ -40,19 +40,18 @@
             <label for="example-text" class = "txtColor">Add picture</label>
             <input type="file" name="userpicture" id="input-picture" class="form-control">
           </div>
-        <div class="dropdown show">
-          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-           Add Season
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Wintern</a>
-            <a class="dropdown-item" href="#">Fall</a>
-            <a class="dropdown-item" href="#">Spring</a>
-            <a class="dropdown-item" href="#">Summer</a>
-          </div>
+          
+      <div class="form-group">
+        <label for="example-text">Add Season</label>
+        <div class="dropdown  season">
+          <select class="dropdown-menu dropdown show" id="my-selection" aria-labelledby="dropdownMenuLink">
+            <option class="dropdown-item" href="#">Winter</option>
+            <option class="dropdown-item" href="#">Fall</option>
+            <option class="dropdown-item" href="#">Spring</option>
+            <option class="dropdown-item" href="#">Summer</option>
+          </select>
         </div>
+      </div>
 
           <div class="form-group">
             <label for="example-description" class = "txtColor">Notes on this item</label>

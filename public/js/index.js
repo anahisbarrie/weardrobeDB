@@ -11,7 +11,7 @@ var $exampleDescription = $("#item-description");
 var $exampleForm = $("#inputform");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
-var $exampledropdownmenu = $("#dropdownMenuLink");
+var $exampledropdownmenu = $(".dropdown-menu option:selected");
 var $examplesummer = $("#summer")
 var $examplewinter = $("#winter")
 var $examplefall = $("#fall")
@@ -111,7 +111,8 @@ var handleFormSubmit = function(event) {
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
     lastwore: $exampleLastWore.val().trim(),
-    seasonality: $exampledropdownmenu.val().trim(),
+    // seasonality: $exampledropdownmenu.val().trim(),
+    seasonality: $(".dropdown-menu option:selected").text(),
     summer: $examplesummer.val().trim(),
     winter: $examplewinter.val().trim(),
     fall: $examplefall.val().trim(),
@@ -134,7 +135,7 @@ var handleFormSubmit = function(event) {
   $exampleStyle.val("");
   $examplePrice.val("");
   $exampleLastWorn.val("");
-  $exampledropdownmenu.val("");
+  // $exampledropdownmenu.text();
   $examplesummer.val("");
   $examplewinter.val("");
   $examplefall.val("");
@@ -168,7 +169,7 @@ e.preventDefault();
     style: $exampleStyle.val().trim(),
     price: $examplePrice.val().trim(),
     lastwore: $exampleLastWorn.val().trim(),
-    seasonality: $exampledropdownmenu.val().trim(),
+    seasonality: $(".dropdown-menu option:selected").text(),
     // summer: $examplesummer.val().trim(),
     // winter: $examplewinter.val().trim(),
     // fall: $examplefall.val().trim(),
@@ -194,7 +195,7 @@ success: function(results){
   $exampleStyle.val("");
   $examplePrice.val("");
   $exampleLastWorn.val("");
-  $exampledropdownmenu.val("");
+  // $exampledropdownmenu.text();
   $examplesummer.val("");
   $examplewinter.val("");
   $examplefall.val("");

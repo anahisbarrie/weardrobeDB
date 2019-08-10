@@ -7,10 +7,10 @@ module.exports = function (sequelize, DataTypes) {
       style: DataTypes.STRING,
       price: DataTypes.STRING,
       lastwore: DataTypes.STRING,
-      times_worn: DataTypes.INTEGER,
+      timesworn: DataTypes.INTEGER,
       imagelink: DataTypes.STRING,
       description: DataTypes.TEXT,
-      seasonality: DataTypes.STRING,
+      seasonality: DataTypes.STRING
       // summer: DataTypes.STRING,
       // winter: DataTypes.STRING,
       // fall: DataTypes.STRING,

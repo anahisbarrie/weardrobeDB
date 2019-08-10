@@ -1,6 +1,6 @@
 USE closetdb;
 
-INSERT INTO example (brand, item_type, color, seasonality, style, price, lastwore, times_worn, imagelink, description)
+INSERT INTO Example (brand, type, color, seasonality, style, price, lastwore, timesworn, imagelink, description)
 VALUES
     ("Calvin Klein", "Bottom", "Black", "Fall", "Casual", 120.22, "2019/06/20", 61, "uploaded_files/blackjeans.jpg", "My favorite CK shirt!"),
     ("Channel", "Accessories", "Gold", "Winter", "Formal", 1000.99, "2019/06/22", 10, "uploaded_files/goldV.jpg", "This bag is to die for!"),
