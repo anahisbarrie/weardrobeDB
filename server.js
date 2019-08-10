@@ -7,11 +7,27 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// User Auth
+var bodyParser = require("body-parser");
+var session = require("express-session");
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// User Auth
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+
+//
 app.use(express.static("public"));
 app.use("/uploaded_files", express.static("uploaded_files"))
+
+// User Auth
+// app.get("/", function(req,res){
+//   res.send("Testing Passport!");
+// })
+
 
 // Handlebars
 app.engine(
@@ -24,7 +40,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
-require("./routes/dailyoutfit")(app);
+require("./routes/outfitRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 
