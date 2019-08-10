@@ -30,14 +30,15 @@
   font-family: 'Nunito', sans-serif;
 }
 
-.h1{
+.h1, h1, h3{
   font-family: 'Nunito, sans serif';
+  color: white;
 }
 
-/* FIXXXXX */
-/* .txtColor{
-  color: aqua;
-} */
+* {
+  font-family: 'nunito', 'sans serif';
+}
+
  
 
 /* Jumbotron */
@@ -61,10 +62,6 @@
     0% { transform: rotate(2deg); }
     100% { transform: rotate(-2deg); }
 }
-
-/* .hanger2:hover {
-  animation-play-state: running;
-} */
 
 .calendarIcon2:hover {
   animation-play-state: running;
@@ -224,6 +221,18 @@
 .inspoBanner{
   margin: 70px 0 100px 0;
 }
+
+.form-group{
+  color: white;
+
+}
+
+.containerIndex{
+  width: 50%;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
 
 .gallery {
 -webkit-column-count: 3;
