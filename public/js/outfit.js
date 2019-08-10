@@ -58,17 +58,17 @@ var generateOutfit = () => OutfitData.getOutfits().then(function(data) {
 
   // Append images to pg
   // Top
-  var topImg = $("<img width=400 height=200>");
+  var topImg = $("<img width=300 height=250>");
   topImg.attr("src", topRandom.image_link);
   $("#topOutfit").append(topImg);
 
   // Bottom
-  var bottomImg = $("<img width=400 height=200>");
+  var bottomImg = $("<img width=300 height=250>");
   bottomImg.attr("src", bottomRandom.image_link);
   $("#bottomOutfit").append(bottomImg);
 
   // Accessory
-  var accessoryImg = $("<img width=300 height=150>");
+  var accessoryImg = $("<img width=200 height=150>");
   accessoryImg.attr("src", accessoryRandom.image_link);
   $("#accessoryOutfit").append(accessoryImg);
 
@@ -178,6 +178,7 @@ $("#saveOutfitBtn").on("click", function() {
       accessory_id: accessoryID
     })
   });
+
 });
 
 // for saveOutfit - pass each object into saveOutfit

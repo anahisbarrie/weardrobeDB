@@ -102,3 +102,18 @@ padding-left: 1.1rem;
 padding-right: 1.1rem;
 }
 }
+
+/* outfit pg */
+
+#outfitContainer{
+  /* background-color: hsla(0, 100%, 25%, 0.2); */
+  background-color: hsla(0, 0%, 100%, 0.3);
+};
+
+
+
+.itemTitle{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px; 
+}

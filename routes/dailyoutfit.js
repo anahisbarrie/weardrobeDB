@@ -34,8 +34,9 @@ module.exports = function(app) {
     db.Example.findAll({ }).then(function(dbAllClothes) {
       // console.log(dbAllClothes);
       res.json(dbAllClothes);
-      res.send("outfit",
-      {clothes: dbAllClothes});
+      res.status("outfit").send({clothes: dbAllClothes});
+      // res.send("outfit",
+      // {clothes: dbAllClothes});
     });
   });
 

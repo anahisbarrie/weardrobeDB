@@ -4,10 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       "Outfit",
       {
         date: DataTypes.DATE,
-        top_id: DataTypes.INT,
-        bottom_id: DataTypes.INT,
-        accessory_id: DataTypes.INT,
-        user_id: DataTypes.INT,
+        top_id: DataTypes.INTEGER,
+        bottom_id: DataTypes.INTEGER,
+        accessory_id: DataTypes.INTEGER,
+        user_id: DataTypes.INTEGER,
       },
       {
         timestamps: false
