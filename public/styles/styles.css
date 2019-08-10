@@ -214,11 +214,8 @@
 
 }
 
-#form-group{
-  color: aqua;
-}
-/* Banner Inspo */
 
+/* Banner Inspo */
 .inspoBanner{
   margin: 70px 0 100px 0;
 }
@@ -238,6 +235,27 @@
 /* Calendar Page */
 .calendar3{
   width: 500px;
+}
+
+/* Outfit Page */
+
+#outfitHome{
+  /* background: url('http://images.summitmedia-digital.com/preview/images/articles/2015/12/10/laureen/nm-laureen.jpg');
+  background-repeat: no-repeat;
+  width: 100%; */
+}
+
+/* #outfitContainer{ */
+  /* background-color: hsla(0, 100%, 25%, 0.2); */
+  /* background-color: hsla(0, 0%, 100%, 0.3); */
+/* }; */
+
+
+
+.itemTitle{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px; 
 }
 
 
@@ -274,6 +292,7 @@ padding-right: 1.1rem;
 }
 }
 
+
 /* outfit pg */
 
 #outfitContainer{
@@ -294,3 +313,4 @@ padding-right: 1.1rem;
  margin-bottom: 30px;
  margin-left: 90px;
 }
+
