@@ -65,7 +65,7 @@ var refreshExamples = function() {
         .text(example.price)
         .attr("href", "/example/" + example.id);
       var $a6= $("<a>")
-        .text(example.lastworn)
+        .text(example.lastwore)
         .attr("href", "/example/" + example.id);
       var $a7= $("<img>")
       .attr("src", example.imagelink)
