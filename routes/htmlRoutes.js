@@ -1,9 +1,31 @@
 var db = require("../models");
 
+// User Auth
+var path = require("path");
+var userAuthenticated = require("../config/middleware/userAuthenticated")
+
 module.exports = function (app) {
-  app.get('/', function (req, res) {
-    res.render('home');
-  });
+
+  // User Auth
+  app.get("/login", function(req,res){
+    // If user has account, send to index
+    if (req.user){
+      res.redirect("/index");
+    }
+
+    // HOW TO REDIRECT TO PAGE?
+
+  })
+
+  // MEMBERS PAGE
+  app.get("/members", userAuthenticated, function(req, res){
+    res.sendFile(path.join(__dirname, "../public/"))
+  })
+
+
+  // app.get('/', function (req, res) {
+  //   res.render('home');
+  // });
   
   // Load index page
   app.get("/index", function (req, res) {
@@ -58,3 +80,4 @@ module.exports = function (app) {
     res.render("404");
   });
 };
+

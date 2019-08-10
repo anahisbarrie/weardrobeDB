@@ -8,26 +8,22 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // User Auth
-var bodyParser = require("body-parser");
 var session = require("express-session");
+var bodyParser = require("body-parser");
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// User Auth
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json());
-
-//
 app.use(express.static("public"));
 app.use("/uploaded_files", express.static("uploaded_files"))
 
 // User Auth
-// app.get("/", function(req,res){
-//   res.send("Testing Passport!");
-// })
-
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+app.use(session({secret: "weardrobe crew", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Handlebars
 app.engine(
@@ -43,6 +39,9 @@ require("./routes/apiRoutes")(app);
 require("./routes/outfitRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
+// User Auth
+require("./routes/htmlRoutes.js")(app);
+require("./routes/userAuthRoutes")(app);
 
 var syncOptions = { force: false };
 
