@@ -48,6 +48,7 @@ module.exports = function (app) {
     res.render("inspo")
   });
 
+
   // Load daily outfit page
   app.get("/outfit", function(req,res){
     res.render("outfit")
