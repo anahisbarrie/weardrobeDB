@@ -19,7 +19,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      // last_login_date: DataTypes.DATE
     },
     {
       timestamps: false
