@@ -7,16 +7,21 @@ module.exports = function(app) {
     // If user has valid login, send to page or else error
     app.post("/api/login", passport.authenticate("local"), function(req,res){
         // Once authenticated - to index pg
-        res.json("/index");
+        res.render("index");
+        // res.json("/index");
     });
 
     // Sign up new user. If sign up is successful, log user in
     app.post("/api/signup", function(req,res){
-        db.User.create({
-            email: req.body.email,
-            password: req.body.password
-        }).then(function(){
-            res.redirect(307, "/api/login");
+        var userInfo = JSON.stringify(req.body);
+        userInfo = JSON.parse(userInfo);
+        // db.User.beforeCreate(userInfo);
+        console.log(userInfo.email);
+        db.User.create(
+            userInfo
+        ).then(function(){
+            res.render("index");
+            // res.redirect(307, "/index");
         }).catch(function(error){
             console.log(error);
             res.json(error);

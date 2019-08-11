@@ -26,18 +26,18 @@ module.exports = function(sequelize, DataTypes) {
   );
 
   // Checks unhashed vs hashed pw in db
-  User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-  };
+  // User.prototype.validPassword = function(password) {
+  //   return bcrypt.compareSync(password, this.password);
+  // };
 
   // Hash PW before creation
   // User.hook("beforeCreate", function(user){
   //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   // });
 
-  User.beforeCreate(function(user, options){
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-  });
+  // User.beforeCreate(function(user, options){
+  //   return user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  // });
 
   return User;
 };
