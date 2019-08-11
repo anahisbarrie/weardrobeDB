@@ -1,32 +1,76 @@
 <!-- Log in Modal -->
-<div id="myModal" class="modal fade">
+<!-- <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Log In!</h2>
+                <h4 class="modal-title">Log In!</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Welcome to weardrobeDB</p>
-                <form>
+                <form id="signin" name="signin" method="post" action="/api/login">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
+                        <input class="form-control text" type="text" name="email" placeholder="Email@email.com" id="userEmail">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" id="userPassword">
                     </div>
-                    <button type="submit" class="btn btn-primary">enter</button>
+                    <button type="submit" class="btn btn-primary" id="userSignInBtn">Enter</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
+
+<!-- New User Modal -->
+<div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="px-4 py-3" id="signup" name="signup" method="post" action="/api/signup">
+          <div class="form-group">
+            <label for="newUserEmail">Email address</label>
+            <input type="email" name="email" class="form-control" id="newUserEmail" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="newUserPassword">Password</label>
+            <input type="password" name="password" class="form-control" id="newUserPassword" placeholder="Password">
+          </div>
+          <div class="modal-footer">
+          </div>
+          <input type="submit" class="btn btn-secondary" value="Create">
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- Jumbotron!  -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <div class="col-lg-12 mb-4">
+            <button class="btn btn-success weardrobebtn btn-circle btn-circle-xl m-1"><i class="buttonbig"></i></button>
+            <button class="btn btn-success calendar btn-circle btn-circle-xl m-1"><i class="buttonbig2"></i></button>
+            <!-- Log In Box -->
+            <div class="wrapper" id="signInBox">
+                <form class="form-signin px-4 py-3 rounded" id="login" name="login" method="post" action="/api/login">       
+                    <h2 class="form-signin-heading text-center" id="loginSign">Log In!</h2>
+                    <label for="userEmailSignIn">Email address</label>
+                    <input type="email" class="form-control input-group" name="email" placeholder="email@email.com" required="" autofocus="" id="userEmailSignIn"/>
+                    <label for="userPasswordSignIn">Password</label>
+                    <input type="password" class="form-control input-group" name="password" placeholder="password" required="" id="userPasswordSignIn"/>      
+                    <input type="submit" class="btn btn-primary" value="Sign In" id="signInBtn">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalSignUp">New to weardrobeDB?</button>
+                </form>
+            </div>
             <button class="btn btn-success weardrobebtn btn-circle btn-circle-xl m-1" href="/"><i class="buttonbig"></i></button>
             <button class="btn btn-success calendar btn-circle btn-circle-xl m-1" href="/calendar"><i class="buttonbig2"></i></button>
             <button class="btn btn-success indexBtn btn-circle btn-circle-xl m-1"><i class="buttonbig3"></i></button>
@@ -41,7 +85,6 @@
     <img src="https://i.ibb.co/8XvnDgV/hanger.png">
 </figure>
 
-
 <!-- Swing Calendar here -->
 <figure class="swing calendarIcon calendarIcon2">
     <a href="/calendar"><img src="https://img.icons8.com/plasticine/2x/calendar.png" width="150px" height="150px"></a>
@@ -51,6 +94,8 @@
 <figure class=" swing dress dress2">
     <a href="/index"><img src="https://i.ibb.co/n0V4GnS/dress1.png" width="90px" height="150px"></a>
 </figure>
+
+
 
 
 <!-- Community Pics Cards -->

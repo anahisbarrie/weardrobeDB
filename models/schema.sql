@@ -35,10 +35,9 @@ CREATE TABLE clothes (
 
 CREATE TABLE users (
     user_id INT NOT NULL AUTO_INCREMENT,
-    user_name VARCHAR(30) NOT NULL,
-    user_email VARCHAR(50) NOT NULL,
-    user_pw VARCHAR(50) NOT NULL,
-    last_login_date DATE NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    -- last_login_date DATE NOT NULL,
     PRIMARY KEY (user_id)
 );
 
