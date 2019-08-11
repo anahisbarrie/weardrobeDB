@@ -4,10 +4,10 @@ console.log("IM LOADED")
 $('document').ready(function () {
 console.log("IM READY")
     //Pixabay API//AJAX request
-    var category = "Fashion"
+    var category = "fashion"
 
     function apithing() {
-        var queryURL = "https://pixabay.com/api/?key=13207618-cd600ee9239da705312ffe8c0&q=fashion+trends&image_type=photo";
+        var queryURL = "https://pixabay.com/api/?key=13207618-cd600ee9239da705312ffe8c0&q=style+trends&image_type=photo";
 
         //AJAX GET request
         $.ajax({
@@ -21,9 +21,9 @@ console.log("IM READY")
                 var hitList = response.hits
                 for (var i = 0; i < hitList.length; i++) {
                     console.log(hitList[i].largeImageURL)
-                    //Do i need this image tag? 
-                    var categoryImg = $("<img height= '300px' width= '300px' class= gif>");
-
+                    
+                    var categoryImg = $("<img height= '350px' width= '300px' class= photo>");
+                
                     var imagePixabay = hitList[i].largeImageURL
 
                     categoryImg.attr("src", imagePixabay);
@@ -36,4 +36,6 @@ console.log("IM READY")
     apithing();
     
 });
+
+
 

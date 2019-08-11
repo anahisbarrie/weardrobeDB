@@ -243,10 +243,22 @@
 
 
 /* Inspiration Page */
+#containerInspo{
+  padding-top: 50px;
 
-/* .images{
-  width: 400px;
-} */
+}
+
+.images{
+  padding-top: 30px;
+}
+
+img.photo{
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  
+}
 
 .gallery {
 -webkit-column-count: 3;
@@ -254,32 +266,17 @@
 column-count: 3;
 -webkit-column-width: 33%;
 -moz-column-width: 33%;
-column-width: 33%; }
+column-width: 33%; 
+margin-top: 50px;
+}
+
 .gallery .pics {
 -webkit-transition: all 350ms ease;
-transition: all 350ms ease; }
-.gallery .animation {
--webkit-transform: scale(1);
--ms-transform: scale(1);
-transform: scale(1); }
-
-@media (max-width: 450px) {
-.gallery {
--webkit-column-count: 1;
--moz-column-count: 1;
-column-count: 1;
--webkit-column-width: 100%;
--moz-column-width: 100%;
-column-width: 100%;
-}
+transition: all 350ms ease; 
 }
 
-@media (max-width: 400px) {
-.btn.filter {
-padding-left: 1.1rem;
-padding-right: 1.1rem;
-}
-}
+
+
 
 /* outfit pg */
 
@@ -289,14 +286,11 @@ padding-right: 1.1rem;
   
 }
 
-
-
 .itemTitle{
   text-align: center;
   vertical-align: middle;
   line-height: 100px; 
 }
-
 
 .season{
  margin-bottom: 30px;
