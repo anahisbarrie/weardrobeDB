@@ -8,6 +8,7 @@
   left: -86px;
 }
 
+
 /* Media Queries */
 @media only screen and (max-width: 900px){
   .dropdown-menu {
@@ -39,6 +40,34 @@
   height: 900px;
 }
 
+/* HOME log in*/
+
+#signInBox{
+  position: fixed; 
+  top: 20%;
+  left: 40%;
+  right: 55%;
+}
+
+#login {
+  background-color: white;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+
+}
+
+#login .input-group {
+  margin-bottom: 20px 
+}
+
+#loginSign{
+  margin-bottom: 30px;
+}
+
+#signInBtn{
+  margin: 10px 0;
+}
 
 /* Animation of Weardrobe button */
 .swing{

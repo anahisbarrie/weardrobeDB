@@ -7,13 +7,15 @@ var db = require("../models");
 // Setting passport to use login with email & pw
 passport.use(new LocalStrategy(
     {
-        usernameField: "email"
+        usernameField: "email",
+        passwordField: "password"
     },
     function(email, password, done) {
         // Will run once user attemps log in and find
         db.User.findOne({
             where: {
-                email: email
+                email: email,
+                password: password
             }
         }).then(function(dbUser){
             // If the email doesn't exist
@@ -23,11 +25,11 @@ passport.use(new LocalStrategy(
                 });
             }
             // If the PW is incorrect
-            else if (!dbUser.validPassword(password)){
-                return done(null,false, {
-                    message: "Incorrect password"
-                });
-            }
+            // else if (!dbUser.validPassword(password)){
+            //     return done(null,false, {
+            //         message: "Incorrect password"
+            //     });
+            // }
 
             // If both are correct
             return done(null, dbUser);

@@ -15,8 +15,8 @@ module.exports = function(app) {
     app.post("/api/signup", function(req,res){
         var userInfo = JSON.stringify(req.body);
         userInfo = JSON.parse(userInfo);
-        // db.User.beforeCreate(userInfo);
         console.log(userInfo.email);
+        console.log(userInfo.password);
         db.User.create(
             userInfo
         ).then(function(){
