@@ -53,8 +53,6 @@
   </div>
 </div>
 
-
-
 <!-- Jumbotron!  -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -73,8 +71,9 @@
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalSignUp">New to weardrobeDB?</button>
                 </form>
             </div>
-            <button class="btn btn-success inspiration btn-circle btn-circle-xl m-1"><i class="buttonbig3"></i></button>
-            <button class="btn btn-success random btn-circle btn-circle-xl m-1"><i class="buttonbig3"></i></button>
+            <button class="btn btn-success weardrobebtn btn-circle btn-circle-xl m-1" href="/"><i class="buttonbig"></i></button>
+            <button class="btn btn-success calendar btn-circle btn-circle-xl m-1" href="/calendar"><i class="buttonbig2"></i></button>
+            <button class="btn btn-success indexBtn btn-circle btn-circle-xl m-1"><i class="buttonbig3"></i></button>
 
         </div>
     </div>
@@ -88,7 +87,12 @@
 
 <!-- Swing Calendar here -->
 <figure class="swing calendarIcon calendarIcon2">
-    <img src="https://img.icons8.com/plasticine/2x/calendar.png" width="150px" height="150px">
+    <a href="/calendar"><img src="https://img.icons8.com/plasticine/2x/calendar.png" width="150px" height="150px"></a>
+</figure>
+
+<!-- Swing hanger -->
+<figure class=" swing dress dress2">
+    <a href="/index"><img src="https://i.ibb.co/n0V4GnS/dress1.png" width="90px" height="150px"></a>
 </figure>
 
 
@@ -124,13 +128,11 @@
 </div>
 
 <!-- big card -->
-<a href="http://google.com">
+ <div class="inspoBanner bg-dark text-white">
+    <a href="/inspo"><img src="https://i.ibb.co/FqQyndr/inspobanner.png" alt="collage"></a>
+</div>
 
-
-    <div class="inspoBanner bg-dark text-white">
-        <img src="https://i.ibb.co/FqQyndr/inspobanner.png" alt="...">
-    </div>
-
+{{!-- Log in Modal --}}
 <script>
     $("document").ready(function () {
         $("#myModal").modal('show');
