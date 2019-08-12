@@ -4,7 +4,7 @@
         "dialect": "mysql",
         "database": "closetdb",
         "username": "root",
-        "password": "mango2019"
+        "password": " YOUR DB PASSWORD HERE"
     },
     "test": {
         "use_env_variable": "db_url",
