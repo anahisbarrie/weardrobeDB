@@ -1,5 +1,4 @@
 
-
 // ///////////////////////////////////////////////////////
 var chai = require("chai");
 var chaiHttp = require("chai-http");
@@ -35,14 +34,6 @@ describe("GET /api/examples", function () {
     ]).then(function () {
       // Request the route that returns all examples
       request.get("/api/examples").end(function (err, res) {
-        // var responseStatus = res.status;
-        // var responseBody = res.body;
-        // Run assertions on the response
-        // expect(err).to.be.null;
-        // expect(responseStatus).to.equal(200);
-        // expect(responseBody)
-        //   .to.be.an("array")
-        //   .that.has.lengthOf(1);
         expect(res.body[0])
           .to.be.an("object")
           .that.includes({
@@ -82,10 +73,7 @@ describe("POST/api/examples", function () {
       style: "pants",
       price: "98",
       lastwore: "21/21/2019",
-      //  imagelink: "/Users/anahisbolivar/Desktop/weardrobedb2/weardrobeDB/uploaded_files/1e65e4cc-5b4b-4126-a93d-0a7b273415fb_Screen Shot 2019-05-07 at 2.44.30 PM.png",
-
       description: "texting dummy data",
-      // imagelink: "test.jpg",
     }
     console.log("----------------------------------------------")
     request.post("/api/examples")
@@ -108,7 +96,6 @@ describe("POST/api/examples", function () {
           .that.includes(requestbody);
         ////////////////////////////////////////////
         // The `done` function is used to end any asynchronous tests
-
         expect(res.body.imagelink).to.include("test.png")
         done();
       });
