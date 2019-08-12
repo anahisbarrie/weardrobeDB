@@ -4,25 +4,36 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/top", function(req, res) {
     // console.log(req.body);
-    db.Example.findAll({ where: { type: "Top" } }).then(function(dbTop) {
+    db.Example.findAll({ 
+      where: {
+        type: {
+          [Op.or] : ["Top", "top"]
+        }
+      }}).then(function(dbTop) {
       res.json(dbTop);
       console.log(dbTop);
     });
   });
 
   app.get("/api/bottom", function(req, res) {
-    db.Example.findAll({ where: { type: "Bottom" } }).then(function(
-      dbBottom
-    ) {
+    db.Example.findAll({ 
+      where: { 
+        type: {
+          [Op.or] : ["Bottom", "bottom"]
+        }
+      }}).then(function(dbBottom) {
       res.json(dbBottom);
       console.info(dbBottom);
     });
   });
 
   app.get("/api/accessories", function(req, res) {
-    db.Example.findAll({ where: { type: "Accessories" } }).then(function(
-      dbAccessories
-    ) {
+    db.Example.findAll({ 
+      where: { 
+        type: {
+          [Op.or] : ["Accessories", "accessories"]
+        }
+      }}).then(function(dbAccessories) {
       res.json(dbAccessories);
       console.log(dbAccessories);
     });
@@ -42,12 +53,12 @@ module.exports = function(app) {
 
   // API route to update item in db
   app.post("/api/updateItem", function(req, res) {
-    var times_worn = req.body.times_worn;
+    var timesworn = req.body.timesworn;
     var item_ID = req.body.id;
-    console.log(times_worn, item_ID);
+    console.log(timesworn, item_ID);
 
     db.Example.update(
-      {times_worn: times_worn},
+      {timesworn: timesworn},
       {where: {id: item_ID}}).then(function(results) {
       console.log(results)
     }).catch(error => {

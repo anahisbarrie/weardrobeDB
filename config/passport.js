@@ -10,11 +10,11 @@ passport.use(new LocalStrategy(
         usernameField: "email",
         passwordField: "password"
     },
-    function(email, password, done) {
+    function(username, password, done) {
         // Will run once user attemps log in and find
         db.User.findOne({
             where: {
-                email: email,
+                email: username,
                 password: password
             }
         }).then(function(dbUser){
