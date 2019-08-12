@@ -5,11 +5,9 @@ var isAuthenticated = require("../config/middleware/userAuthenticated");
 
 module.exports = function(app) {
     // If user has valid login, send to page or else error
-    app.post("/api/login", passport.authenticate("local"), function(req,res){
-        // Once authenticated - to index pg
-        res.render("index");
-        // res.json("/index");
-    });
+    app.post("/api/login", passport.authenticate("local", {
+        successRedirect: "/index",
+        failureRedirect: "/" }));
 
     // Sign up new user. If sign up is successful, log user in
     app.post("/api/signup", function(req,res){
@@ -20,8 +18,8 @@ module.exports = function(app) {
         db.User.create(
             userInfo
         ).then(function(){
-            res.render("index");
-            // res.redirect(307, "/index");
+            // res.render("index");
+            res.redirect("/index");
         }).catch(function(error){
             console.log(error);
             res.json(error);
