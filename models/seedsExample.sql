@@ -11,7 +11,7 @@ VALUES
     ("Mikoh", "Bottom", "Pink", "Summer", "Swimwear", 74.99, "2019/06/15", 65, "uploaded_files/blackjeans.jpg", "Just too cute"),
     ("Nike", "Top", "Orange", "Spring", "Athleisure", 59.99, "2018/03/12", 456, "uploaded_files/floralshirt.jpg", "These are my favorite running shorts."),
     ("Hugo Boss", "Bottom", "Black", "Fall", "Business", 454.99, "2019/08/22", 165, "uploaded_files/blackjeans.jpg", "I wore this when I closed my first deal!"),
-    ("Pedal & Pup", "Top", "Beige", "Spring", "Business", 229.99, "2018/09/04", 456, "uploaded_files/greenchiffon.jpeg", "My boss loves this skirt."),
-    ("Vrai & Oro", "Accessories", "Gole", "Spring", "Casual", 229.99, "2018/07/04", 456, "uploaded_files/pandanecklace.jpg", "Panda is my favorite animal");
+    ("Pedal & Pup", "Top", "Beige", "Spring", "Business", 20.99, "2018/09/04", 56, "uploaded_files/greenchiffon.jpeg", "My boss loves this skirt."),
+    ("Vrai & Oro", "Accessories", "Gole", "Spring", "Casual", 229.99, "2018/07/04", 352, "uploaded_files/pandanecklace.jpg", "Panda is my favorite animal");
 
 
