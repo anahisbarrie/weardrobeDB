@@ -1,14 +1,47 @@
-<h1>Welcome To Your WearTistics!</h1>
+<div class="container"><h1 class="text-center text-dark pt-3" >Welcome To Your closetDB WearTistics!</h1></div>
 
+<div class="row">
+    <div class="card col-md-5 my-3 bg-light mx-auto">
+        <div class="card-body pb-0">
+            <h5 class="text-center">Top Five Most Worn Articles Of Clothing</h5>
+            <hr>
+        </div>
+        <div class="card-body mt-1">
+            <canvas id='topFive' width='200' height='200'></canvas>
+        </div>
+    </div>
 
-<h2>Top Five Most Worn Articles Of Clothing</h2>
-<canvas id = 'topFive' width = '200' height = '200'></canvas>
-<h2>Seasonality Breakdown</h2>
-<canvas id = 'seasonality' width = '200' height = '200'></canvas>
-<h2>Style Breakdown</h2>
-<canvas id = 'style' width = '200' height = '200'></canvas>
-<h2>Top Five Least Worn Articles Of Clothing</h2>
-<canvas id = 'leastWorn' width = '200' height = '200'></canvas>
+    <div class="card col-md-5 my-3 bg-light mx-auto">
+        <div class="card-body pb-0">
+            <h5 class="text-center">Seasonality Breakdown</h5>
+            <hr>
+        </div>
+        <div class="card-body">
+            <canvas id='seasonality' width='200' height='200'></canvas>
+        </div>
+    </div>
+</div>
 
-//since we are calling js file everything in that file is available to us.
+<div class="row">
+    <div class="card col-md-5 my-3 bg-light mx-auto">
+        <div class="card-body pb-0">
+            <h5 class="text-center">Style Breakdown</h5>
+            <hr>
+        </div>
+        <div class="card-body">
+            <canvas id='style' width='200' height='200'></canvas>
+        </div>
+    </div>
+
+    <div class="card col-md-5 my-3 bg-light mx-auto">
+        <div class="card-body pb-0">
+            <h5 class="text-center">Top Five Least Worn Articles Of Clothing</h5>
+            <hr>
+        </div>
+        <div class="card-body">
+            <canvas id='leastWorn' width='200' height='200'></canvas>
+        </div>
+    </div>
+</div>
+
 <script src="/js/statistics.js"></script>
