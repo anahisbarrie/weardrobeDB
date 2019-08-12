@@ -2,5 +2,4 @@
 node_modules
 npm-debug.log
 .env
-config.json
 uploaded_files
