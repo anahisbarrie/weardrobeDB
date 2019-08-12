@@ -52,15 +52,15 @@ module.exports = function (app) {
     });
   });
 
-  //Load statistics page with all the charts and current information for the user
+  //Load statistics page with all the charts and current information f›or the user
   app.get("/statistics", function (req, res) {
       res.render("stats")
   })
 
   //This is the get route in order to get all the data. The way this works is that when we hit the /statistics route, the stats handlebars file is loaded. This file is linked to the main.handlebars file, at the bottom of the file there is a script link to my statistics.js file. There is a function in the statistics.js there that calls a get route which then circles back to the route below and gets the data from the DB.
   app.get("/api/statistics", function (req, res) {
-    db.Clothes.findAll({}).then(function (dbClothes) {
-      res.json(dbClothes)
+    db.Example.findAll({}).then(function (dbExample) {
+      res.json(dbExample)
     })
   })
 

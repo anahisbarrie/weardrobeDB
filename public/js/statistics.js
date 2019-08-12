@@ -6,8 +6,8 @@ function getStats() {
     let styleArray = []
     let itemNameArray = []
 
-    //Sort the object so that the lowest times_worn value is the first element and the largest is the last element 
-    let sortedArrOfObj = data.sort((a, b) => a.times_worn > b.times_worn ? 1 : -1)
+    //Sort the object so that the lowest timesworn value is the first element and the largest is the last element 
+    let sortedArrOfObj = data.sort((a, b) => a.timesworn > b.timesworn ? 1 : -1)
 
     console.log(`Sorted Array Of Objects `, sortedArrOfObj)
 
@@ -15,7 +15,7 @@ function getStats() {
     for (let i = 0; i < sortedArrOfObj.length; i++) {
 
       //This section will grab all the times worn and push them into the times worn array. We will use this array for both the top five and least five by slicing the front five and back five from the array once ordered. Push the numbers into timesWornArray
-      let currentTimesWorn = sortedArrOfObj[i].times_worn
+      let currentTimesWorn = sortedArrOfObj[i].timesworn
       timesWornArray.push(currentTimesWorn)
 
       //Push the seasonality of each clothing item into the seasonality array
@@ -27,7 +27,7 @@ function getStats() {
       styleArray.push(currentItemStyle)
 
       //Push the names of the clothing into the item names array, the indexes will always match their respective item data in all arrays since we are in the same forloop
-      let itemName = sortedArrOfObj[i].brand + " " + sortedArrOfObj[i].item_type
+      let itemName = sortedArrOfObj[i].brand + " " + sortedArrOfObj[i].type
       itemNameArray.push(itemName)
     }
 
@@ -115,7 +115,24 @@ function topFive(topFive, names) {
       labels: names,
       datasets: [{
         label: "Top Five Most Worn Articles Of Clothing",
-        data: topFive
+        data: topFive,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
       }]
     },
     options: {
@@ -139,7 +156,24 @@ const leastWorn = (bottomFive, names) => {
       labels: names,
       datasets: [{
         label: "Top Five Least Worn Articles Of Clothing",
-        data: bottomFive
+        data: bottomFive,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
       }]
     },
     options: {
@@ -166,7 +200,24 @@ const seasonality = (seasons, counts) => {
       labels: seasons,
       datasets: [{
         label: 'Style Breakdown By Seasonality',
-        data: counts
+        data: counts,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
       }]
     },
     options: {
@@ -184,7 +235,24 @@ const style = (style, counts) => {
       labels: style,
       datasets: [{
         label: 'Style Breakdown By Seasonality',
-        data: counts
+        data: counts,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
       }]
     },
     options: {
