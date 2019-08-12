@@ -7,7 +7,7 @@ var storage = multer.diskStorage({
     callback(null,"uploaded_files/")
   },
   filename: function(req,file,callback){
-    console.log(file);
+    // console.log(file);
     var originalfilename = file.originalname;
     var filename = uuid4() + "_" + originalfilename
     callback(null,filename)
@@ -27,12 +27,12 @@ module.exports = function(app) {
 
 
   app.post("/api/examples", upload.single("userpicture"), function(req, res) {
-    console.log("data from frontend: ", req.body);
-    console.log("file", req.file);var PORT = process.env.PORT || 3000;
+    // console.log("data from frontend: ", req.body);
+    // console.log("file", req.file);var PORT = process.env.PORT || 3000;
     var PORT = process.env.PORT || 3000;
   var updatedfilename = "http://localhost:" + PORT + "/uploaded_files/" + req.file.filename
     var uploadedInfo = { ...req.body, imagelink: updatedfilename}
-    console.log("updated information with link ", uploadedInfo)
+    // console.log("updated information with link ", uploadedInfo)
     db.Example.create(uploadedInfo).then(function(dbExample) {
       res.json(dbExample);
     });

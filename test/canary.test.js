@@ -18,7 +18,7 @@ describe("GET /api/examples", function () {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", function (done) {
+  it("should find all examples GET METHOD", function (done) {
     // Add some examples to the db to test with
     db.Example.bulkCreate([
       {
